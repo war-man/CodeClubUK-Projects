@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 2</p>
+<section id="julskoj" class="level1">
+<h1>Julskoj</h1>
+<p><strong>Introduktion:</strong> <strong>I det här projektet kommer vi att skapa ett spel med rullande bakgrunder, poängsättning och en festlig Game Over-skärm.</strong> En olycka i en leksaksfabrik har gjort att julklappar faller ner från himlen. Hjälp Rudolf att rädda Julen genom att fånga julklapparna!</p>
+<section id="steg-1-gör-så-att-rudolf-flyger" class="level2">
+<h2>STEG 1: Gör så att Rudolf flyger</h2>
+<ol type="1">
+<li>Starta ett nytt Scratchprojekt. Ta bort katten genom att högerklicka på den och välja Radera.</li>
+<li>Byt bakgrunden till SkyBackground.png.</li>
+<li>Använd <strong>Välj ny sprite från fil</strong> knappen för att lägga till Rudolf-spriten till projektet (använd <strong>Rudolph.png</strong> filen)</li>
+<li>Byt namn på spriten till <strong>Rudolf</strong>.</li>
+<li>Gör så att Rudolf följer musen genom att använda följande script:</li>
+</ol>
+<p><img src="f01a35452e97aca94f184d5a9b4e8c472e62d005.png" alt="när FLAGGA klickas på
+lägg överst
+för alltid 
+    gå till musmarkör
+(slut på för alltid)" /></p>
+<section id="testa-ditt-projekt" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan och flytta på muspekaren</strong>, följer Rudolf efter muspekaren?</p>
+<ol start="6" type="1">
+<li>För att göra spelet mer intressant ska vi lägga till några rörliga snöiga backar så att det ser ut som att Rudolf flyger. Använd knappen <strong>Välj ny sprite från fil</strong> för att lägga till Snöspriten till projektet ( använd filen __SnowHills.png)</li>
+<li>Byt namn på spriten till <strong>Snow1</strong>.</li>
+<li>Skapa en ny variabel genom att klicka på Variabler och Ny variabel. Kalla den ScrollX och skapa den för alla sprites, bocka sedan av rutan bredvid för att ta bort variabeln från scenen. Den här variabeln kommer att användas för att kontrollera hur backarna rör sig.</li>
+<li>Lägg till följande script för att göra så att backarna rör sig:</li>
+</ol>
+<p><img src="aca7705c3f53f8d659e817884f67ab1bd999837a.png" alt="när FLAGGA klickas på 
+sätt y till 0
+för alltid
+    sätt x till ScrollX
+    ändra ScrollX med -1
+    om ScrollX &lt; -480
+        sätt ScrollX till 0
+    (slut på om)
+(slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-1" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan</strong>, rör sig backarna? Vad händer då backarna rör sig mot sidan av scenen?</p>
+<ol start="10" type="1">
+<li>Låt oss fixa problemet med att de snöiga backarna flimrar då de når den högra sidan av skärmen. Lägg till mer backar till scenen genom att använda <strong>Välj ny sprite från fil</strong> knappen för att lägga till Snö-spriten till projektet igen (använd SnowHills.png-filen).</li>
+<li>Byt namn på spriten till <strong>Snow2</strong>.</li>
+<li>Lägg till följande script till Snow2-spriten för att tillåta en ytterligare uppsättning av backar som följer tätt efter det första:</li>
+</ol>
+<p><img src="f4f175f5e8a5d330d4d914326f31a211455df675.png" alt="när FLAGGA klickas på 
+sätt y till 0
+för alltid
+    sätt x till ScrollX + 479
+(slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-2" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan</strong>, rör sig backarna? Har problemet med de flimrande träden försvunnit?</p>
+<p><strong>Spara ditt projekt</strong></p>
+</section>
+</section>
+<section id="steg-2-fallande-julklappar" class="level2">
+<h2>STEG 2: Fallande julklappar</h2>
+<ol type="1">
+<li>Vi måste nu lägga till julklappar som Rudolf ska samla in. Använd knappen <strong>Välj ny sprite från fil</strong> för att lägga till Julklapp-spriten till projektet (använd Present.png filen).</li>
+<li>Byt namn på spriten <strong>Julklapp</strong>.</li>
+<li><strong>Skapa en ny variabel</strong> genom att klicka på <strong>variabler</strong>. Kalla den för <code>Stopp</code> och gör den för enbart för denna sprite, bocka sedan av rutan bredvid för att ta bort den från scenen. Denna kommer att användas för att kontrollera när julklappen ska tas bort från spelet.</li>
+<li><strong>Skapa en annan variabel</strong> och kalla den för &quot;hastighet&quot; - gör så att den finns för enbart denna sprite. Bocka sedan av rutan bredvid för att ta bort variabeln från scenen. Den här variabeln kommer att användas för att kontrollera julklapparnas hastighet då de faller nerför skärmen.</li>
+<li>Lägg till följande script till <strong>Julklapp</strong> -spriten för att låta den falla ned från himlen. Notera att vi kommer att använda &quot;slumptal&quot; för att göra så att julklapparna framträder på olika ställen varje gång.</li>
+<li>Genom att använda kommandot &quot;rör [ Rudolf ]&quot; kan vi göra så att julklappen försvinner när den vidrörs. Detta kan vi använda senare för att sätta poäng.</li>
+</ol>
+<p><img src="96c836da209e6663bb3670749ef6e7fb9dd52cad.png" alt="när FLAGGA klickas på
+för alltid
+    sätt Stopp till 0
+    gå till x: slumptal -230 till 230 y: slumptal 50 till 170
+    sätt Hastighet till -1
+    repetera tills stopp = 1
+        ändra y med hastighet 
+        om y-läge av Present &lt; -160
+            sätt stopp till 1
+        (slut på om)
+        om rör Rudolf?
+            sätt stopp till 1
+        (slut på om)
+    (slut på repetera)
+(slut på för alltid)" /></p>
+<section id="testa-ditt-projekt-3" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan,</strong> faller julklapparna från himlen? Försvinner de när Rudolf rör dem eller då de slår i marken?</p>
+<ol start="7" type="1">
+<li>Låt oss göra spelet mer intressant genom att byta färg på julklapparna varje gång de faller ner. Gör detta genom att använda ändra färg-kommandot.</li>
+<li>Ändra hastigheten på varje julklapp genom att byta ut sätt hastighet med slumptal-kommandot, prova olika värden som -10 till -1. Ditt script ska nu se ut så här.</li>
+</ol>
+<p><img src="476821810a7778a8f351026f43cdaebbaf4a8619.png" alt="när FLAGGA klickas på
+för alltid
+    sätt stopp till 0
+    gå till x: slumptal -230 till 230 y: slumptal 50 till 170
+    ändra färg effekten med slumptal 1 till 100
+    sätt hastighet  till -1
+    repetera tills stopp = 1
+        ändra y med hastighet 
+        om y-läge av Present &lt; -160
+            sätt stopp till 1
+        (slut på om)
+        om rör Rudolf?
+            sätt stopp till 1
+        (slut på om)
+    (slut på repetera)
+(slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-4" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan,</strong> faller julklapparna med olika hastighet och har de olika färg?</p>
+</section>
+</section>
+<section id="steg-3-poängsättning-och-ljudeffekter" class="level2">
+<h2>STEG 3: Poängsättning och ljudeffekter</h2>
+<ol type="1">
+<li><strong>Låt oss ändra vårt script för att hålla koll på poängsättningen i spelet.</strong> Vi kan sedan använda detta för att bestämma när game over-meddelandet ska visas.</li>
+<li>Skapa en ny <strong>variabel</strong> genom att klicka på variabler. Kalla den &quot;Poäng&quot; och gör den för alla sprites. Låt denna variabel vara ibockad så att den syns på skärmen.</li>
+<li>Ändra scriptet bakom <strong>Present</strong> spriten så att det ser ut så här. Notera att vi har lagt till både ljudeffekter med <code>spela trumman</code> kommandot och även <code>ändra [ score ] med 1</code> när Rudolf rör julklappen.</li>
+</ol>
+<p><img src="b6da91d2301477b3df0968b921358ef33550d48f.png" alt="när FLAGGA klickas på
+för alltid
+    sätt stopp till 0
+    gå till x: slumptal -230 till 230 y: slumptal 50 till 170
+    ändra färg effekten med slumptal 1 till 100
+    sätt hastighet  till -1
+    repetera tills stopp = 1
+        ändra y med hastighet 
+        om y-läge av Present &lt; -160
+            spela trumman 57 i 0.2 taktslag
+            sätt stopp till 1
+        (slut på om)
+        om rör Rudolf?
+            spela trumman 39 i 0.2 taktslag
+            sätt stopp till 1
+            ändra poäng med 1
+        (slut på om)
+    (slut på repetera)
+(slut på för alltid)" /></p>
+<ol start="4" type="1">
+<li>Låt oss lägga till lite musik till spelet, importera ljudfilen <strong>Jingle_Bells.mp3</strong> till <strong>Scenen</strong>.</li>
+</ol>
+<p><img src="e702a67c4a27eeb406460a2544aa4e162655b68f.png" alt="när FLAGGA klickas på
+sätt ScrollX till 0
+sätt Score till 0
+spela ljudet Jingle_Bells" /></p>
+<ol start="5" type="1">
+<li>Lägg till följande script till <strong>Scenen</strong>, detta kommer att <strong>sätta poängen till 0</strong> när spelet startas. Det kommer också att spela Jingle Bells när spelet spelas.</li>
+</ol>
+<p>Notera, om musiken till en början låter &quot;hackig&quot; ska du spara projektet, stänga ner Scratch och öppna projektet igen.</p>
+<section id="testa-ditt-projekt-5" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan,</strong> ändras poängen när Rudolf rör vid en julklapp?</p>
+<p><strong>SPARA DITT PROJEKT</strong></p>
+</section>
+</section>
+<section id="steg-4-game-over" class="level2">
+<h2>STEG 4: Game over</h2>
+<ol type="1">
+<li><strong>Låt oss ändra vårt script för att hålla koll på poängen i spelet.</strong> Vi kan använda detta senare för att bestämma när game over-meddelandet ska visas.</li>
+<li>Ändra scriptet på <strong>Scenen</strong> så att när <strong>poäng når 10</strong> ska vi &quot;sända&quot; ett <strong>GameOver</strong> -meddelande.</li>
+</ol>
+<p><img src="2c7f04740d1208d6fd48a01ac04d8765c957a4a8.png" alt="när FLAGGA klickas på 
+sätt ScrollX till 0
+sätt Score till 0
+spela ljudet Jingle_Bells
+för alltid
+    om score = 10
+        sända GameOver och vänta
+    (slut på om)
+(slut på för alltid)" /></p>
+<ol start="3" type="1">
+<li>Vi måste nu lägga in vårt GameOver-meddelande. Använd knappen <strong>Välj ny sprite från fil</strong> för att lägga till <strong>GameOver</strong> -spriten till projektet (använd filen GameOver.png).</li>
+<li>Byt namn på spriten till <strong>GameOver</strong>.</li>
+<li><strong>Lägg till följande script till GameOver-spriten.</strong> Detta kommer att gömma bilden när spelet startar och visa den när GameOver-meddelandet har tagits emot.</li>
+</ol>
+<p><img src="72784563a7827d1e9b605557c6c57464429a0873.png" alt="när FLAGGA klickas på 
+göm
+
+när jag tar emot GameOver
+lägg överst
+visa
+stoppa alla" /></p>
+<section id="testa-ditt-projekt-6" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan,</strong> ändras poängen när Rudolf rör vid julklappen?</p>
+<p><strong>SPARA DITT PROJEKT</strong></p>
+</section>
+</section>
+<section id="utmaning-gör-spelet-svårare" class="level2">
+<h2>Utmaning: Gör spelet svårare</h2>
+<ul>
+<li>Kan du få julklapparna att vingla på deras väg nerför skärmen?</li>
+<li>Kan du lägga till mer än en julklapp till spelet på samma gång?</li>
+<li>Ändra GameOver-meddelandet så att det visas efter att 20 julklappar har samlats in.</li>
+<li>Kan du minska poängen med 1 när en julklapp slår i marken?</li>
+</ul>
+<p><strong>Bra gjort du är klar, nu kan du njuta av spelet.</strong> Ha en riktigt God Jul!</p>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Felix &amp; Herbert — </title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  <link rel="stylesheet" href="/css/scratch.css">
+</head>
+<body>
+<header>
+<div class="level">Nivå 1</div>
+<div class="title">Felix &amp; Herbert</div>
+<div class="logo"><img src="/img/ccuk_logo.svg"/></div>
+</header>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<section id="introduktion" class="level1 intro">
+<h1>Introduktion</h1>
+<p>Vi ska skapa ett spel där <strong>katten Felix</strong> ska försöka ta <strong>musen Herbert</strong>. Du kontrollerar Herbert med muspekaren och försöker undvika att bli fångad av Felix. Ju längre du håller dig ifrån honom desto fler poäng får du, men se till att inte åka fast för då går poängen ner igen!</p>
+</section>
+<section id="steg-1-felix-följer-muspekaren" class="level1">
+<h1>STEG 1: Felix följer muspekaren</h1>
+<section id="section" class="level2 check">
+<h2></h2>
+<ol type="1">
+<li>Skapa ett nytt projekt.</li>
+<li>Klicka på Scen bredvid spriten och byt till fliken Bakgrunder, importa sen bakgrunden indoors/hall. Radera den ursprungliga tomma bakgrunden.</li>
+<li>Byt namn på spriten till Felix.</li>
+<li>Se till att Felix bara pekar åt vänster-höger genom att klicka på den här knappen:</li>
+<li><p>Skapa följande script:</p>
+<p><img src="f593b2884d7fe546b324e23205b2a12116805752.png" alt="
+    När FLAGGA klickas på
+
+    för alltid
+
+        peka mot musmarkör
+
+        gå 10 steg
+
+        nästa klädsel
+
+        spela trumman 62 i 0.3 taktslag
+
+    (slut på för alltid)" /></p></li>
+</ol>
+</section>
+<section id="testa-ditt-projekt" class="level2 flag">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong> Följer Felix muspekaren? Ser det ut som att han går när han rör sig? Rör han sig i rätt hastighet?</p>
+</section>
+<section id="spara-ditt-projekt" class="level2">
+<h2>Spara ditt projekt</h2>
+</section>
+</section>
+<section id="steg-2-felix-jagar-herbert" class="level1 activity">
+<h1>STEG 2: Felix jagar Herbert</h1>
+<p><strong>Nu vill vi att Felix ska jaga musen Herbert istället för muspekaren.</strong></p>
+<section id="section-1" class="level2 check">
+<h2></h2>
+<ol type="1">
+<li>Skapa en ny sprite genom att klicka på Välj ny sprite från fil-knappen och välj animals/mouse1.</li>
+<li>Byt namn på spriten till Herbert.</li>
+<li>Byt klädsel och gör den mindre än Herbert. Pröva med sex klick på Förminska-knappen:</li>
+<li>Se till så att Herbert bara pekar åt vänster-höger.</li>
+<li><p>Ge Herbert det här scriptet:</p>
+<p><img src="ce6b1666532202ada4598e783f7d986bb39485a1.png" alt="
+    När FLAGGA klickas på
+    för alltid
+        gå till musmarkör
+        peka mot Felix
+    (slut på för alltid)" /></p></li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-1" class="level2 flag">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Rör sig Herbert med musmarkören? Jagar Felix Herbert?</p>
+</section>
+<section id="spara-ditt-projekt." class="level2 flag">
+<h2>Spara ditt projekt.</h2>
+</section>
+</section>
+<section id="steg-3-felix-säger-till-när-han-har-fångat-herbert" class="level1">
+<h1>STEG 3: Felix säger till när han har fångat Herbert</h1>
+<p><strong>Vi vill att Felix ska veta när han har fångat Herbert, och säga det till oss.</strong></p>
+<section id="section-2" class="level2 activity">
+<h2></h2>
+<ol type="1">
+<li><p>Ändra Felix script så det ser ut såhär:</p>
+<p><img src="2fb47ef7a0899d13398a7b70ead65c3a58142459.png" alt="
+    när FLAGGA klickas på
+    för alltid
+        peka mot musmarkör
+        gå 10 steg
+        nästa klädsel
+        spela trumman 62 i 0.3 taktslag
+        om rör Herbert
+            säg Fångad! i 1 sekund
+        (slut på om)
+    (slut på för alltid)" /></p></li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-2" class="level2 flag">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Säger Felix till när han har fångat Herbert?</p>
+</section>
+<section id="spara-ditt-projekt-1" class="level2 save">
+<h2>Spara ditt projekt</h2>
+</section>
+</section>
+<section id="steg-4-herbert-blir-ett-spöke-när-han-fångas" class="level1">
+<h1>STEG 4: Herbert blir ett spöke när han fångas</h1>
+<p><strong>Istället för att Felix säger någonting så vill vi att Herbert ska förvandlas till ett spöke när han fångas.</strong></p>
+<section id="section-3" class="level2 activity">
+<h2></h2>
+<ol type="1">
+<li><p>Ändra i Felix script så att det skickar ut följande meddelande när han fångar Herbert.</p>
+<p><img src="6b3ac432224b0c80a4ae8fedade261955a22bb56.png" alt="
+    när FLAGGA klickas på
+    för alltid
+        peka mot musmarkör
+        gå 10 steg
+        nästa klädsel
+        spela trumman 62 i 0.3 taktslag
+        om rör Herbert
+            sänd fångad
+            spela trumman 58 i 0.2 taktslag
+            vänta 1 sekunder
+        (slut på om)
+    (slut på för alltid)" /></p></li>
+<li>Importera en ny klädsel till Herbert från fantasy/ghost2-a.</li>
+<li>Redigera klädseln och gör den mindre. Sex klick på Förminska-knappen borde räcka.</li>
+<li>Byt namn på Herberts klädslar på musklädseln heter &quot;levande&quot; och spökkostymen heter &quot;död&quot;.</li>
+<li><p>Skapa ett nytt script till Herbert för att förvandla honom till spöke:</p>
+<p><img src="390a412234dff8351a688f6680b361d48d673dc1.png" alt="
+    när jag tar emot fångad
+    växla till klädsel död
+    vänta 0.5 sekunder
+    växla till klädsel levande" /></p></li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-3" class="level2 flag">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Blir Herbert ett spöke när han fångas? Spelar Felix de rätta ljuden när han ska? Står Felix still tillräckligt länge för att Herbert ska kunna ge sig iväg?</p>
+</section>
+<section id="spara-ditt-projekt-2" class="level2 save">
+<h2>Spara ditt projekt</h2>
+</section>
+</section>
+<section id="steg-5-räkna-poäng" class="level1">
+<h1>STEG 5: Räkna poäng</h1>
+<p><strong>Nu lägger vi till ett poängsystem så vi vet hur bra vi är på att hålla Herbert vid liv. Vi börjar med att låta poängen vara noll och höjer den med ett varje sekund. Om Felix fångar Herbert minskar vi poängen med hundra.</strong></p>
+<ol type="1">
+<li>Skapa en variabel som heter poäng för alla sprites. Klicka på Variabler i toppmenyn, skapa en variabel och kalla den poäng.</li>
+<li><p>På scenen, skapa de här två scripten</p>
+<p><img src="0600e4e54f217f10caba939e697a3b963ae2ba1e.png" alt="
+    när FLAGGA klickas på
+    sätt poäng till 0
+    för alltid
+        ändra score med 1
+        vänta 1 sekunder
+    (slut på för alltid)
+
+    när jag tar emot fångad
+    ändra score med -100" /></p></li>
+</ol>
+<section id="testa-ditt-projekt-4" class="level2 flag">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Ökas pängen med ett varje sekund? Minskas poängen med 100 när Herbert fångas? Vad händer när Herbert fångas innan poängen har blivit hundra? Nollställs poängen när du startar om spelet?</p>
+</section>
+<section id="spara-ditt-projekt-3" class="level2 save">
+<h2>Spara ditt projekt</h2>
+<p><strong>Bra jobbat, nu är du klar och kan spela spelet!</strong> Glöm inte att du kan dela spelet med dina kompisar genom att klicka på <strong>Dela ut</strong> i menyn.</p>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

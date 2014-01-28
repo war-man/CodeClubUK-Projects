@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 2</p>
+<section id="den-hungriga-fisken" class="level1">
+<h1>Den hungriga fisken</h1>
+<p><strong>Introduktion:</strong> Vi ska göra ett spel om en hunrgig fisk! Styr den stora Hungriga Fisken och försök att äta upp alla kräftor som simmar omkring.</p>
+<section id="steg-1-skapa-en-sprite-som-följer-muspekaren" class="level2">
+<h2>STEG 1: Skapa en sprite som följer muspekaren</h2>
+<p><strong>Nu ska få vi den Hungriga Fisken att simma omkring i havet!</strong></p>
+<ol type="1">
+<li>Skapa ett nytt Scratchprojekt.</li>
+<li>Välj Scenen, och sen scenens flik Bakgrunder. Importera bakgrunden nature/underwater och ta bort background1.</li>
+<li>Byt namn på Sprite 1 så den heter Hungriga Fisken.</li>
+<li>Importera Hungriga Fiskens klädsel från resources/hungry-fish och ta sedan bort dess befintliga costume1 och costume2.</li>
+<li>Klicka på knappen ovanför Klädslar-fliken så att fisken bara kan simma höger-vänster.</li>
+<li>Nu ska du skapa ett script för Hungriga Fisken så att den följer muspekaren runt i havet. Det gör du såhär:</li>
+</ol>
+<p><img src="31bda9b87ee06af029361323ab02a32a4bd282fa.png" alt="
+    när FLAGGA klickas på
+    för alltid      
+        peka mot musmarkör
+        gå 3 steg
+    (slut på för alltid)" /></p>
+<section id="testa-ditt-projekt" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong> Flytta runt muspekaren i havet. Följer fisken pekaren? Vad händer om du inte flyttar muspekaren och fisken hinner ikapp den? Hur ser det ut? Varför händer det?</p>
+<ol start="7" type="1">
+<li>Du kan stoppa Hungriga Fisken från att flippa som en galning om du gör så att den bara rör sig när den inte är för nära muspekaren. (<em>avstånd till</em>-blocket finns i Känna av-paletten.)</li>
+</ol>
+<p><img src="75176c4dc7be0b196f7e140c4a55bebd251a2791.png" alt="
+    när FLAGGA klickas på
+    för alltid om avstånd till musmarkör &gt; 10
+        peka mot musmarkör
+        gå 3 steg
+    (slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-1" class="level3">
+<h3>Testa ditt projekt</h3>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="saker-att-pröva" class="level2">
+<h2>Saker att pröva</h2>
+<p>Om du vill så kan du byta ut siffrorna i scriptet till andra. Hur påverkar det hur Hungriga Fisken rör sig? Byt ut avståndströskeln till ett högre nummer (t.ex. 100) eller ett lågt nummer (t.ex. 1). Byt ut hur mycket fisken fisken rör sig till ett högt nummer (t.ex. 20) eller ett lågt nummer (t.ex. 1 eller till och med 0).</p>
+</section>
+<section id="steg-2-lägg-till-lite-kräftor" class="level2">
+<h2>STEG 2: Lägg till lite kräftor</h2>
+<ol type="1">
+<li>Skapa en ny sprite från filen animals/lobster1.</li>
+<li>Använd Förminska sprite-verktyget (ovanför Scenen) för att göra spriten mindre.</li>
+<li>Skapa ett script som får kräftorna att simma omkring. Vi vill att de ska röra sig slumpvist, så vi får dem att gå framåt en liten bit och gör sen så att de slumpvist vänder sig åt vänster eller höger, och sen fortsätter så.</li>
+</ol>
+<p><img src="aa775e20f411890949dfadc98031a6c64c4265ab.png" alt="
+    när FLAGGA klickas på
+    för alltid      
+        gå 2 steg
+        vänd slumptal -20 till 20 grader
+        studsa om vid kanten
+    (slut på för alltid)" /></p>
+<section id="testa-ditt-projekt-2" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan</strong> och se hur kräftorna simmar omkring. Simmar de som du hade tänkt dig? Simmar de realistiskt?</p>
+<p><strong>Just nu interagerar inte Hungriga Fisken med kräftorna. Det löser vi i nästa steg.</strong></p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva-1" class="level3">
+<h3>Saker att pröva</h3>
+<ul>
+<li>Pröva att byta ut siffrorna i slumptalet och gå-blocken. Rör sig kräftorna annorlunda?</li>
+<li>Vad gör <strong>studsa om vid kanten</strong>-blocket? Ta bort det och se vad som händer.</li>
+</ul>
+</section>
+</section>
+<section id="steg-3-hungriga-fisken-äter-kräftorna" class="level2">
+<h2>STEG 3: Hungriga Fisken äter kräftorna</h2>
+<p><strong>Nu vill vi att Hungriga Fisken ska äta kräftorna!</strong> När Hungriga Fisken har fångat en kräfta i munnen ska två saker hända: * Hungriga Fisken ska stänga sin mun och göra ett ätljud. * Kräftan ska försvinna för att sen komma tillbaka lite senare.</p>
+<ol type="1">
+<li>Först får vi kräftan att försvinna om den nuddar Hungriga Fisken, för att sen komma tillbaka 3 sekunder senare. Använd rör-blocket för att se om kräftan vidrör fisken.</li>
+</ol>
+<p><img src="e877a9e4ea7e9d6896c8d79de39919b03dc55879.png" alt="
+    när FLAGGA klickas på
+    för alltid  
+        gå 2 steg
+        vänd slumptal -20 till 20 grader
+        studsa om vid kanten
+        om rör Hungriga Fisken?
+            göm
+            vänta 3 sekunder
+            visa
+        (slut på om)
+    (slut på för alltid)" /></p>
+<section id="testa-ditt-projekt-3" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Testa ditt spel igen - kan du hitta några fel?</strong> Lägg märke till att kräftorna försvinner oavsett var på Hungriga Fisken den nuddar. Och så skulle fisken bara kunna vänta i 3 sekunder och äta kräftan igen precis när den kommer tillbaka - vilket inte är så rättvist!</p>
+<ol start="2" type="1">
+<li>Hur kan vi se till att kräftan bara försvinner om den nuddar Hungriga Fiskens mun? Vi skulle kunna använda rör färgen-blocket och kolla om den nuddar fisken blå tänder. För att göra det här behöver du byta ut rör-blocket mot ett rör färgen-block i ditt script, sen klicka på färgen i blocket och till sist klicka på fiskens tänder.</li>
+<li>Sen kan vi få kräftan att röra sig mot en slumpvis punkt på skärmen innan den kommer tillbaka igen, och ge den ett slumpvärde för x och y.</li>
+</ol>
+<p><img src="2c6edeae29695f4cfe4ff0409ccf83efb24f5899.png" alt="
+    när FLAGGA klickas på
+    för alltid      
+        gå 2 steg
+        vänd slumptal -20 till 20 grader
+        studsa om vid kanten
+        om rör färgen []?
+            göm
+            vänta 3 sekunder
+            gå till x:slumptal -220 till 220 y: slumptal -170 till 170
+            visa
+        (slut på om)
+    (slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-4" class="level3">
+<h3>Testa ditt projekt</h3>
+<p>Testa spelet igen - försvinner kräftan bara om den har nuddat fiskens mun? Och kommer den tillbaka på en slumpvis punkt på skärmen istället för där den var när den åts upp?</p>
+<ol start="4" type="1">
+<li>Fisken behöver veta när den har ätit något så att den kan spela ett ljud och byta utseende. För att lösa det kan vi låta kräftan sända ut att den har blivit uppäten innan den försvinner.</li>
+</ol>
+<p><img src="9aaa7f98175286c47f3f15540e8e768e9c315f15.png" alt="
+    när FLAGGA klickas på
+    för alltid      
+        gå 2 steg
+        vänd slumptal -20 till 20 grader
+        studsa om vid kanten
+        om rör färgen []?
+            sända du fick mig
+            göm
+            vänta 3 sekunder
+            å till x:slumptal -220 till 220 y: slumptal -170 till 170
+            visa
+        (slut på om)
+    (slut på för alltid)" /></p>
+<p><strong>Nu vill vi att fisken ska svara på det här meddelandet genom att göra ett ätljud och slå ihop käkarna.</strong></p>
+<ol start="5" type="1">
+<li>Lägg till klädseln resources/mouth-closed och ljudet resources/chomp till Hungriga Fisken-spriten.</li>
+<li>Lägg sen till ett nytt script till Hungriga Fisken så att den svarar på meddelandet som kräftan skickat ut. Det här scriptet ska få fisken att spela upp ätljudet och byta till klädseln med stängd mun, vänta lite grann och sen byta tillbaka igen.</li>
+</ol>
+<p><img src="e7c60a632878292cae4ecc7a9d07617908d2becd.png" alt="
+    när jag tar emot du fick mig
+    spela ljudet chomp
+    repetera 2
+        växla till klädsel mouth-closed
+        vänta 0.5 sekunder
+        växla till klädsel hungry-fish
+    (slut på repetera)" /></p>
+<p><strong>Nu är Hungriga Fisken redo att äta, så vi fyller havet med kräftor. Högerklicka på kräftspriten och klicka på &quot;kopiera&quot; flera gånger.</strong></p>
+</section>
+<section id="testa-ditt-projekt-5" class="level3">
+<h3>Testa ditt projekt</h3>
+<p>Klicka på den gröna flaggan. Äter den Hungriga Fisken kräftorna? Äter den alla kräftorna?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-tänka-på" class="level3">
+<h3>Saker att tänka på</h3>
+<p>Varför måste vi lägga till ett visa-block i början av kräftans script? Fundera på vad som skulle hända om kräftan blev uppäten och spelet avslutades innan den hann komma tillbaka. Vad skulle hända om spelet startades om då?</p>
+<p><strong>Bra jobbat, nu är du klar med grundspelet. Men det finns fler saker du kan lägga till. Är du redo för en utmaning?</strong></p>
+</section>
+</section>
+<section id="utmaning-1-få-kräftorna-att-röra-sig-annorlunda" class="level2">
+<h2>Utmaning 1: Få kräftorna att röra sig annorlunda</h2>
+<p>Just nu rör sig alla kräftorna på samma sätt. <strong>Kan du få en av dem att röra sig annorlunda?</strong> <strong>Ledtråd:</strong> Lägg inte för mycket tid på den här delen utan att kolla in de andra utmaningarna i det här projektet.</p>
+<p><strong>Välj en av kräftorna att experimentera med.</strong> Om de alla har samma klädsel, ändra färgen på experimentkräftan med <strong>ändra färgeffekten</strong>-blocket. På så vis kan du alltid känna igen den.</p>
+<p>Gör så att experimentkräftan rör sig långsammare än de andra. <strong>Ledtråd:</strong> Kolla in gå 2 steg-blocket.</p>
+<section id="testa-ditt-projekt-6" class="level3">
+<h3>Testa ditt projekt</h3>
+<p>Rör sig kräftan långsammare? Gör det spelet roligare? Nu kan du <strong>pröva att få en av kräftorna att röra sig snabbare än de andra.</strong></p>
+<p>Rör sig kräftorna fortfarande på ett bra sätt? Gör de här ändringarna att spelet blir roligare? <strong>Ledtråd:</strong> Om dina kräftor simmar runt i cirklar, kolla in värdena i slumptal-blocket och vänd-blocket.</p>
+<p>Tänk om du skulle göra så att alla kräftor betedde sig olika, genom att ändra de här värdena på olika sätt?</p>
+<p>Gör någon av dina ändringarna att spelet blir bättre? Gör de spelet mer intressant, kul, svårt, eller lätt?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="utmaning-2-få-kräftorna-att-undvika-hungriga-fisken" class="level2">
+<h2>Utmaning 2: Få kräftorna att undvika Hungriga Fisken</h2>
+<p>Kräftorna i det här spelet är väldigt dumma! De bara simmar omkring hursomhelst tills de blir uppätna. Riktiga bytesdjur simmar bort från rovdjur. <strong>Vi gör så att en av kräftorna simmar iväg från Hungriga Fisken.</strong></p>
+<p>Det finns inget block i Scratch som säger vilket håll en annan sprite är på väg åt. Men du kan få en sprite att peka mot en annan spite, och sen få den att vända sig åt andra hållet. Blocken du behöver finns i <strong>Rörelse</strong>-paletten.</p>
+<p><strong>Gör nu så att en av kräftorna alltid pekar åt motsatt håll som Hungriga Fisken.</strong> Du kanske även vill få den att vagga lite när den simmar iväg.</p>
+<section id="testa-ditt-projekt-7" class="level3">
+<h3>Testa ditt projekt</h3>
+<p>Gör det här kräftan svårare att fånga? Gör det spelet bättre?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="utmaning-3-lägg-till-ett-poängsystem" class="level2">
+<h2>Utmaning 3: Lägg till ett poängsystem</h2>
+<p>Det räcker inte med att bara äta kräftor. Hur vet du att du är bättre än dina kompisar? <strong>Du måste ha ett sätt att hålla koll på poängen, så vi lägger till en poängtavla.</strong> Titta på Scratch-kortet <strong>Keep Score</strong> som beskriver hur man gör det.</p>
+<p>Var ska du lägga blocket som uppdaterar poängen?</p>
+<p>Se till så att poängen nollställs i början av spelet. Var ska det blocket vara?</p>
+<section id="testa-ditt-projekt-8" class="level3">
+<h3>Testa ditt projekt</h3>
+<p>Nollställs poängen när du startar spelet? Blir den högre varje gång du äter en kräfta?</p>
+<p>Spara projektet</p>
+</section>
+</section>
+<section id="utmaning-4-lägg-till-en-timer" class="level2">
+<h2>Utmaning 4: Lägg till en timer</h2>
+<p><strong>Ge dig själv en tidsgräns i spelet.</strong> Hur många kräftor kan du äta på 30 sekunder?</p>
+<p>Titta på Scratch-kortet <strong>Timer</strong> för att förstå hur man lägger till en timer i spelet. Börja med att spelet håller på i 30 sekunder.</p>
+<section id="tesa-ditt-projekt" class="level3">
+<h3>Tesa ditt projekt</h3>
+<p>Börjar timern på 30?</p>
+<p>Tickar den ner i rätt hastighet?</p>
+<p>Kan du fånga kräftor medan timern är igång?</p>
+<p>Avslutas spelet när timern blir 0?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="utmaning-5-lägg-till-bonuspoäng" class="level2">
+<h2>Utmaning 5: Lägg till bonuspoäng</h2>
+<p>Dela ut en stor bonuspoäng om du kan äta alla tre kräftorna på samma gång. Hur kan du hålla koll på hur många kräftor som har blivit uppätna? <strong>Ledtråd:</strong> Ett sätt att göra det här på är att <strong>använda en variabel för att räkna hur många kräftor som simmar omkring.</strong></p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-6-ändra-spelreglerna-håll-kräftorna-vid-liv" class="level2">
+<h2>Utmaning 6: Ändra spelreglerna: håll kräftorna vid liv!</h2>
+<p>Ibland får man de bästa idéerna genom att ta en existerande idé och göra motsatsen.</p>
+<p><strong>Ändra i spelreglerna så att du, istället för att kontrollera fisken som försöker äta de andra, kontrollerar en kräfta i havet med massor av Hungriga Fiskar.</strong> Hur länge kan du klara dig utan att bli uppäten?</p>
+<p>Spara ditt projekt</p>
+<p><strong>Bra jobbat, du är klar! Nu kan du spela!</strong> Kom ihåg att du kan dela med dig av spelet till dina kompisar och din familj genom att klicka på <strong>Dela ut</strong> i menyn!</p>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

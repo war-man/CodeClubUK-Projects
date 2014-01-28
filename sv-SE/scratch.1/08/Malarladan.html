@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 3</p>
+<section id="målarlådan" class="level1">
+<h1>Målarlådan</h1>
+<p><strong>Introduktion:</strong> I det här projektet bygger vi ett ritverktyg som du kan använda för att skapa din egen konst. Du kan byta färg, tömma skärmen, göra stämplar och mycket mer!</p>
+<section id="steg-1-dra-och-måla" class="level2">
+<h2>STEG 1: Dra och måla</h2>
+<p>Vi börjar med en penna som ritar när du drar runt den på Scenen.</p>
+<ol type="1">
+<li>Skapa ett nytt Scratchprojekt. Radera katten genom att högerklicka på den och välj radera.</li>
+<li>Klicka på <strong>Scenen</strong> och sen på fliken <strong>Bakgrunder</strong>. Ladda upp bakgrunden frame.bmp.</li>
+<li>Skapa en ny sprite som du kallar <strong>penna</strong>, använd <strong>resources-pencil.</strong></li>
+<li>Byt till fliken <strong>klädslar</strong> och <strong>Redigera</strong>, ändra sen mittpunkten av bilden så att den hamnar på pennans spets. För att göra det kan du klicka på <strong>Sätt mittpunkt på klädseln</strong> och dra i linjerna tills de hamnar på spetsen.</li>
+<li>Få pennan att följa muspekaren runt scenen genom att använda <strong>för alltid</strong> och <strong>gå till musmarkör.</strong></li>
+</ol>
+<p><img src="b319a80f1b10faf06a84ec83f952df74c6ace6e9.png" alt="när FLAGGA klickas på
+för alltid
+    gå till musmarkör
+(slut på för alltid)" /></p>
+<p><strong>Nu vill vi använda den här pennspriten som en riktig penna.</strong> Om du tittar under avdelningen Penna hittar du alla möjliga block som har att göra med att rita. De som vi ska börja med är <strong>penna ned</strong> och <strong>penna upp.</strong></p>
+<ol start="6" type="1">
+<li>Vi vill använda musknappen för att kontrollera pennan - alltid när musknappen är nere ska pennan vara nere, och när den är uppe ska pennan vara uppe. Vi kan göra det här genom att använda blocken om... annars och musknappen?</li>
+</ol>
+<p><img src="c683bbb4b03c792c30f84dcd8f6d3d7fc9dadf82.png" alt="när FLAGGA klickas på
+för alltid
+    gå till musmarkör
+    om musknappen?
+    penna ned
+    annars
+    penna upp
+    (slut på om)
+(slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong> Följer pennan muspekaren? Vad händer om du håller nere musknappen och flyttar musen? Bry dig inte om färgen på pennan än.</p>
+<ol start="7" type="1">
+<li>Till slut kommer skärmen bli helt fylld med pennstreck. Blocket radera kan användas för att tömma skärmen.</li>
+</ol>
+<p><img src="a74f43c50a6276e0da48bb3985b8b887d3b5a367.png" alt="när FLAGGA klickas på
+radera
+för alltid
+    gå till musmarkör
+    om musknappen?
+    penna ned
+    annars
+    penna upp
+    (slut på om)
+(slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-1" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Försvinner din teckning när du klickar på den gröna flaggan?</p>
+<p>SPARA DITT PROJEKT</p>
+</section>
+<section id="steg-2-radera-allt" class="level2">
+<h2>STEG 2: Radera allt</h2>
+<p>Istället för att behöva starta om hela projektet för att tömma skärmen, vill vi ha en knapp som suddar ut teckningen. Den ska göra det genom att använda blocket radera.</p>
+<ol type="1">
+<li>Skapa en ny sprite från klädseln <strong>resources/cancel button</strong>.</li>
+<li>Byt namn på spriten till <strong>radera</strong>.</li>
+<li>Placera spriten någonstans i det nedre vänsta hörnet av scenen.</li>
+<li>Ge raderaspriten det här enkla scriptet:</li>
+</ol>
+<p><img src="319ba3de8669def29185c7f2efc0f965c8b495f6.png" alt="när radera klickas på
+radera" /></p>
+</section>
+<section id="testa-ditt-projekt-2" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Tömmer raderaknappen din skärm?</p>
+<p>SPARA DITT PROJEKT</p>
+</section>
+<section id="steg-3-byta-färg" class="level2">
+<h2>STEG 3: Byta färg</h2>
+<p>Hittills kan vi bara rita blåa streck. Nu vill vi rita med fler färger! Vi lägger till lite fler sprites längst ner på skärmen. Spritearna kommer se ut som färgade knappar. Om vi klickar på en knapp kommer den byta färg på strecket vi ritar. För att låta oss hålla koll på vilken färg vi använder ska knappen även byta färg på pennspriten.</p>
+<ol type="1">
+<li>Lägg till en ny sprite som du kallar <strong>röd</strong> Använd klädseln <strong>resources/red-selector</strong>.</li>
+<li>Placera den någonstans längst ner på skärmen, nära <strong>radera-knappen</strong>.</li>
+<li>När spriten klickas på, ska den skicka ut meddelandet <strong>röd</strong>.</li>
+</ol>
+<p><img src="69d8277bd566654b579d6d6773343e5a8163d657.png" alt="när röd klickas på
+sända röd" /></p>
+<p><strong>Ja, det är allt den gör. Grovjobbet görs av pennan.</strong></p>
+<p>Importera en ny röd klädsel till pennan, använd <strong>resources/red-pencil</strong>. Fixa så att mittpunkten blir pennspetsen som vi gjorde förut.</p>
+<ol start="4" type="1">
+<li>Lägg till ett nytt script till pennan. När pennan tar emot meddelandet <strong>röd</strong> ska den byta till den röda pennklädseln och också byta pennfärgen till röd (genom att använda blocket sätt pennans färg till).</li>
+</ol>
+<p><strong>Tips:</strong> om du klickar på den färgade rutan i blocket <strong>sätt pennans färg till</strong> så kan du klicka med pipetten på den röda spriten och sno dess färg till rutan.</p>
+<p><img src="4beef224a30743f321605cfdb0d5edfc75306bf8.png" alt="när jag tar emot röd
+växla till klädsel röd-penna
+sätt pennans färg till (röd)" /></p>
+</section>
+<section id="testa-ditt-projekt-3" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Börja med att rita ett streck. Klicka sen på spriten som gör pennan röd och rita lite mer. Bytter pennan klädsel? Ritar den i rött nu? Ritar den från pennspetsen?</p>
+<p>SPARA DITT PROJEKT</p>
+<ol start="5" type="1">
+<li>Gör om det just gjorde för blå, gul och grön väljfärgarsprite.</li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-4" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Fungerar alla färgvalknappar? Byter de pennans klädsel till rätt färg? Får de alla pennan att måla med rätt färg? Ritar alla pennans klädslar med pennspetsen?</p>
+<p>SPARA DITT PROJEKT</p>
+</section>
+<section id="steg-4-rita-bara-inom-ramarna" class="level2">
+<h2>STEG 4: Rita bara inom ramarna</h2>
+<p>Du har säkert märkt att du kan måla överallt på skärmen, till och med på kanten. Så vill vi inte ha det. Vi vill ha målningen i mitten av Scenen. Vi kan lösa det genom att se till att pennan inte kan lämna ritytan - den ljusgrå delen av Scenen.</p>
+<p>Kom ihåg att Scratch pratar om punkter på skärmen med en x- och en y-axel. Vår rityta finns mellan 230 och -230 på x-axeln och 170 och -120 på y-axeln. Vi kan vända de här värdena i ett <strong>om</strong>-block, då ser vi till att muspekaren är inom den här ytan innan pennan börjar rita där.</p>
+<p>För att göra det här kan vi göra ett nytt block runt omkring ditt nuvarande <strong>gå till... om</strong>-block, och inuti det nya om-blocket kolla efter följande:</p>
+<p>mus y är större än -120 och mus y är mindre än 170 och mus x är större än -230 och mus x är mindre än 230</p>
+<p><strong>Obs!</strong> för att göra det här kommer du behöva använda flera stycken <strong>och</strong>-operatorblock, ett för de två villkoren för mus x, ett för de två villkoren för mux y, och så ytterligare ett för att sätta ihop alla:</p>
+<p><img src="7e6c699bc37bcf3ccbb8f0de0724e99c29e635a0.png" alt="radera
+för alltid
+om mus y är större än -120 och mus y är mindre än 170 och mus x är större än -230 och mus x är mindre än 230
+gå till musmarkör" /></p>
+<p>Eftersom vi inte kan rita utanför ritytan kan vi gömma pennverktyget när vi lämnar ytan. För att göra det byter vi ut blocket <strong>om</strong> mot ett <strong>om annars</strong> -block. Behåll samma villkor för <strong>om</strong>, och <strong>visa</strong> pennan om det är sant, göm den annars.</p>
+<p><img src="c922e7bce890d60114845ccce703c37c799546c1.png" alt="
+när FLAGGA klickas på
+penna upp
+radera
+för alltid
+    om mus y är större än -120 och mus y är mindre än 170 och mus x är större än -230 och mus x är mindre än 230
+        gå till musmarkör
+        visa
+        om musknappen?
+            penna ned
+        annars
+            penna upp
+        (slut på om)
+    annars
+        göm
+    (slut på om)
+(slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-5" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Kan du fortfarande rita inom ritytan? Kan du rita utanför ritytan? Vad händer med pennan när du lämnar ritytan och går tillbaka till den?</p>
+<p>SPARA DITT PROJEKT</p>
+</section>
+<section id="steg-5-suddgummi" class="level2">
+<h2>STEG 5: Suddgummi</h2>
+<p><strong>Det är kul att rita streck, men det händer att man gör ett misstag och vill kunna sudda.</strong> Vi kan göra det med ett nytt pennverktyg som ritar med grått (samma färg som bakgrunden).</p>
+<p>Lägg till en ny knappsprite till Scenen för att kunna välja suddgummit. Använder klädseln <strong>resources/eraser</strong> som du gör lite mindre så att den passar in längst ner på Scenen. Den ska fungera på samma sätt som de andra färgvalsknapparna, och sända ut ett suddmeddelande.</p>
+<p>Pennspriten ska svara på suddmeddelandet genom att byta pennfärg till grå (kom ihåg att du kan använda <strong>pipetten</strong> för att välja färgen från bakgrunden). Den kommer även behöva en klädsel som ser ut som ett suddgummi: använd samma klädsel, <strong>resources/eraser</strong>. <strong>Kom ihåg att ändra klädselns mittpunkt.</strong></p>
+</section>
+<section id="testa-ditt-projekt-6" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Suddar suddgummit? Fungerar det ända fram till kanten? Kan du byta mellan penna och sudd?</p>
+<p>SPARA DITT PROJEKT</p>
+</section>
+<section id="steg-6-stämplar" class="level2">
+<h2>STEG 6: Stämplar</h2>
+<p>Det nästa vi ska göra är att skapa ett stämpelverktyg som vi kan ha för att stämpla små bilder på teckningen. Aktivitetslista</p>
+<ol type="1">
+<li>Skapa en ny sprite med vilken klädsel som helst. Krymp spriten och placera den längst ner på scenen bredvid de andra verktygen. När den här spriten klickas på ska den <strong>sända ut meddelandet stämpel</strong></li>
+<li>Lägg till en ny klädsel till den här pennspriten, samma som du valde till <strong>stämpel</strong> -knappen.</li>
+<li>Välj pennspriten och skapa en ny variabel som heter <strong>pennläge</strong> bara för den spriten. Vi ska använda den här variabeln för att hålla koll på om vi ritar eller stämplar.</li>
+<li>Lägg till ett nytt script som svarar på stämpelmeddelandet. Det ska byta klädsel till stämpeln och sätta variabeln <strong>pennläge</strong> till _falskt__.</li>
+<li>Ändra i de andra scripten som svarar på verktygsväljarmeddelanden (röd, grön, blå och sudd) så att de var och en sätter <strong>pennläge</strong> till <strong>sant</strong>.</li>
+<li>Till sist ska vi se till att den här variabeln kollas <strong>när musknappen är nere</strong>, så att programmet vet om vi ska rita eller stämpla. Om pennläge = sant ska vi använda den befintliga <strong>penna ned</strong>, annars stämpeln.</li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-7" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Fungerar stämpelverktyget som du vill?</p>
+<p>Vad händer om du byter tillbaka till ett av de vanliga pennverktygen?</p>
+<p>SPARA DITT PROJEKT</p>
+<p><strong>Snyggt jobbat, nu är du klar med de grundläggande stegen i det här projektet. Pröva de här utmaningarna!</strong></p>
+</section>
+<section id="utmaning-1-regnbågspenna" class="level2">
+<h2>Utmaning 1: Regnbågspenna</h2>
+<p>Vi lägger till en specialpenna som målar i regnbågens alla färger. Det kan man ju inte göra med riktiga pennor, så det blir kul att få datorn att göra det. Hemligheten bakom regnbågsmålning är blocket ändra pennans färg med.</p>
+<p>Lägg först till regnbågsverktygväljarspriten och regnbågsverktygklädseln till pennspriten:</p>
+<ol type="1">
+<li>Skapa en ny verktygsväljarsprite och placera den längst ner på scenen, bredvid alla de andra pennfärgspritearna. Använd klädseln resources/rainbow-selector och låt den sända ut meddelandet regnbåge när den klickas på.</li>
+<li>Lägg till klädseln resources/rainbow-pencil till pennspriten.</li>
+</ol>
+<p>Du behöver skapa ett script som byter pennfärg många gånger varje sekund för att skapa regnbågseffekten (Att ändra siffran med 5 var 0,05:e sekund funkar bra, men testa med olika värden). Scratchkortet om timers förklarar hur du kan få något att hända med jämna mellanrum. Använd blocket &quot;ändra pennans färg med 5&quot; istället för blocket &quot;ändra timer med -1&quot; inuti loopen.</p>
+<p>Du behöver också kontrollera den loopen så att den bara ändrar pennfärgen när du har valt regnbågspennan, annars kommer alla pennor rita regnbågsfärger! Du kan åstadkomma det här på ett sätt som är väldigt likt hur pennspriten byter mellan penn- och stämpelläge. Du behöver skapa en variabel som heter regnbågsbyte och som har värdet sant när du vill ha regnbågseffekt och falskt när du inte vill det. Varje gång pennan svarar på ett verktygsbytesmeddelande ska den sätta värdet på regnbågsbyte därefter.</p>
+<p>Använd det du lärt dig från stämpelsteget ovan för att kontrollera regnbågseffekten. Scriptet som svarar på verktygsväljarmeddelanden kommer sätta två variabler var: pennläge och regnbågsbyte.</p>
+</section>
+<section id="testa-ditt-projekt-8" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Fungerar regnbågsverktygen som du vill?</p>
+<p>Vad händer när du byter tillbaka till någon av de vanliga pennverktygen?</p>
+<p>SPARA DITT PROJEKT</p>
+</section>
+<section id="utmaning-2-kortkommandon" class="level2">
+<h2>Utmaning 2: Kortkommandon</h2>
+<p>Istället för att använda verktygsväljarspritearna längst ner på scenen kan du använda tangentbordet för att välja olika verktyg. Du kan använda [] nedtryckt?-block för att svara på tangentbordstryckningar. För varje tangent du vill använda måste du dra in ett nytt [] nedtryckt?-block, som skickar samma meddelande som respektive verktygsväljarsprite skickar när den klickas på. Lägg till dessa scripts till scenen.</p>
+<p>Det kan vara bra att låta kortkommandot vara en bokstav som påminner om det man ska göra med det, till exempel s för stämpla.</p>
+</section>
+<section id="testa-ditt-projekt-9" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Har alla verktyg ett eget kortkommando nu? Fungerar alla på rätt sätt när du väljer dem med tangetbordet? Är de rätta verktyget fortfarande valda med verktygsväljarspritearna på scenen?</p>
+<p>SPARA DITT PROJEKT</p>
+</section>
+<section id="utmaning-3-stor-och-liten" class="level2">
+<h2>Utmaning 3: Stor och liten</h2>
+<p>En annan funktion som de flesta ritprogram har är att kunna byta storlek på pennan. Vi lägger till det. Det finns en svårighet dock, nämligen att ibland behöver vi ändra storlek på pennan och ibland behöver vi ändra storlek på pennspritens klädsel. Det beror på om vi använder en penna eller en stämpel.</p>
+<p>Skapa två nya verktygsväljarsprites, som du kallar större och mindre. Den ska ha klädslarna resources/bigger-selector och resources/smaller-selector, och ska skicka meddelandena &quot;större&quot; och &quot;mindre&quot;.</p>
+<p>Pennspriten kan svara på meddelandena genom att ändra antingen pennstorlek med 1 eller klädselstorlek med 10, beroende på värdet hos variabeln pennläge (använd ett om-annars-block, ungefär på samma sätt som spriten väljer mellan att rita eller stämpla). Glöm inte att skapa kortkommandon för förstoringen och förminskningen. T.ex. upp- och nertangenterna.</p>
+<p>SPARA DITT PROJEKT</p>
+<p>Du kanske har lagt märke till att varje gång du ändrar storlek på stämpeln ändras också storleken på pennan när du byter till den. För att förhindra att det händer behöver du sätta storleken till 100% varje gång du byter till ett pennverktyg. Då får verktyget rätt storlek.</p>
+<p>För att göra allt ännu bättre, låt stämpeln komma ihåg vilken storlek den hade innan du valde pennverktyget och gå tillbaka till den storleken när du väljer stämpelverktyget igen. Det lättaste sättet att göra det här är att skapa en ny variabel som heter &quot;stämpelstorlek&quot;, som uppdateras med den nuvarande storleken varje gång stämpelns storlek ändras. När stämpelverktyget sen väljs kan den hämta sin storlek från den här variabeln.</p>
+</section>
+<section id="testa-ditt-projekt-10" class="level2">
+<h2>Testa ditt projekt</h2>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Fungerar storleksförändring på pennorna?</p>
+<p>Vad händer om du byter till en stämpel, ändrar storleken på den och sen byter tillbaka till en penna?</p>
+<p>SPARA DITT PROJEKT</p>
+<p><strong>Snyggt jobbat, nu är du klar! Varsågod och rita något vackert.</strong></p>
+<p>Glöm inte att du kan dela det här spelet med kompisar och familj genom att klicka på <strong>Dela ut</strong> i menyn!</p>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

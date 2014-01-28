@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 1</p>
+<section id="fyrverkerier" class="level1">
+<h1>Fyrverkerier</h1>
+<p><strong>Introduktion:</strong> I det här projektet ska vi skapa ett fyrverkeri över en stad.</p>
+<section id="steg-1-skapa-en-raket-som-flyger-mot-muspekaren" class="level2">
+<h2>STEG 1: Skapa en raket som flyger mot muspekaren</h2>
+<p><strong>Låt oss importera olika bilder för spelet</strong></p>
+<ol type="1">
+<li>Starta ett nytt Scratchprojekt. Radera katten genom att högerklicka på den och välja Radera.</li>
+<li>Ersätt bakgrunden med outdoor/city-with-water</li>
+<li>Använd <strong>ny sprite från fil</strong> för att lägga till en raketsprite till projektet (använd klädseln Resources/Rocket.png)<br /></li>
+<li>Göm raketen när den gröna flaggan har klickats på.</li>
+</ol>
+<p>Nu vill vi att raketen ska röra sig mot muspekaren när musen har klickats.</p>
+<ol start="5" type="1">
+<li>Lägg till ett &quot;när mellanslag trycks&quot;-block, och låt under detta raketen synas och glida mot muspekaren</li>
+</ol>
+<p><img src="ef209563597832aa95ca7164beb568c5c03d4425.png" alt="
+    när FLAGGAN klickas på
+    
+    göm
+    
+    
+    när mellanslag trycks
+    visa
+    glid 1 sek till x: mus x y: mus y" /></p>
+<section id="testa-ditt-projekt" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan, placera muspekaren över scenen och tryck på mellanslag.</strong></p>
+<p>Visas raketen och rör den sig mot musen? Vad händer om du rör musen och slår mellanslag igen?</p>
+<ol start="6" type="1">
+<li>Fyrverkerier brukar inte flyga från sida till sida, så låt oss se till att den alltid glider mot musen från botten av skärmen. Innan vi visar raketen, använd &quot;gå till&quot;-blocket för att säga åt den att röra sig från botten av skärmen, men stanna på samma ställe horisontellt.</li>
+</ol>
+<p><img src="d24d8bdf640abc9ca70c1361d48e1094a810e940.png" alt="
+    när FLAGGAN klickas på
+
+    göm
+
+    
+    när mellanslag trycks
+    gå till x: mus x y: -200
+    visa
+    glid 1 sek till x: mus x y: mus y" /></p>
+</section>
+<section id="testa-ditt-projekt-1" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan, placera musen över scenen och tryck på mellanslag.</strong> Flyger raketen mot musen från botten av skärmen? Vad händer om du rör musen och trycker mellanslag igen?</p>
+<ol start="7" type="1">
+<li>Slutligen, låt oss få detta att fungera genom att använda musknappen istället för mellanslag. För att göra detta kan vi avsluta vårt script i en <strong>för alltid om musknappen?</strong>. Byt sedan <strong>när mellanslag trycks</strong>-kontrollblocket med <strong>när flaggan klickats på</strong>, och sist men inte minst se till att raketen är gömd när allt börjar.</li>
+</ol>
+<p><img src="c93c4570dec054f5370f2b287f7f38a53516cc6f.png" alt="
+    när FLAGGAN klickas på
+    göm
+    för alltid om musknappen?
+        gå till x: mus x y: -200
+        visa
+        glid 1 sek till x: mus x y: mus y
+    (slut på för alltid)" /></p>
+</section>
+<section id="testa-ditt-projekt-2" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan, tryck sedan på musknappen någonstans på scenen. Klicka igen på en annan punkt.</strong></p>
+</section>
+<section id="saker-att-pröva" class="level3">
+<h3>Saker att pröva</h3>
+<ol type="1">
+<li>Försök att göra några raketer lite långsammare eller snabbare än andra.</li>
+<li>Försök att ändra raketens riktning innan den glider mot muspekaren så att den får en båge.</li>
+</ol>
+<p>Spara ditt projekt.</p>
+</section>
+</section>
+<section id="steg-2-gör-så-att-raketen-exploderar" class="level2">
+<h2>STEG 2: Gör så att raketen exploderar</h2>
+<ol type="1">
+<li>Första steget för att få raketen att explodera är att se till att det spelas ett bang-ljud (resources) innan den börjar röra på sig, och sedan gömma sig då den når musen. För att importera ett ljud, gå till Ljud-fliken och klicka på import.</li>
+</ol>
+<p><img src="5accb82e834f9d3dc1e0d26d0af45352fe41a412.png" alt="
+    när FLAGGAN klickas på
+    göm
+    för alltid om musknappen?
+        gå till x: mus x y: -200
+        spela ljudet bang
+        visa
+        glid 1 sek till x: mus x y: mus y
+        göm
+    (slut på för alltid)" /></p>
+<ol start="2" type="1">
+<li>Nu ska vi göra så att raketen sänder ett nytt meddelande när den exploderar. Vi kommer att lyssna efter detta meddelande senare.</li>
+</ol>
+<p><img src="fa93237760f1e426a1a03e32850a6248a4f4db83.png" alt="
+    när FLAGGAN klickas på
+    göm
+    för alltid om musknappen? 
+        gå till x: mus x y: -200
+        spela ljudet bang
+        visa
+        glid 1 sek till x: mus x y: mus y
+        göm
+        sänd explosion
+    (slut på för alltid)" /></p>
+<section id="testa-ditt-projekt-3" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong> Se till att raketen spelar ett ljud och göms när den når musen.</p>
+<ol start="3" type="1">
+<li>Skapa en ny sprite från fil, Resources/firework1.png</li>
+<li>När den tar emot explosionsmeddelandet ska den gömma sig och sedan flyttas till raketens position genom att använda &quot;gå till&quot;-blocket, för att sedan försvinna igen en sekund senare.</li>
+</ol>
+<p><img src="91c521c3059b2453e37a6d921e564c930037d567.png" alt="
+    när jag tar emot explosion
+
+    göm
+
+    gå till x: x läge av raket y: y läge av raket
+
+    visa
+
+    vänta 1 sek
+
+    göm" /></p>
+</section>
+<section id="testa-ditt-projekt-4" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Skicka en annan flygande raket.</strong> Blir den ersatt med en explosionsbild när den exploderar? Vad händer om du håller musknappen nere medan du rör på musen? (Oroa dig inte, vi ska fixa det här senare).</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="steg-3-gör-varje-explosion-unik" class="level2">
+<h2>STEG 3: Gör varje explosion unik</h2>
+<ol type="1">
+<li>Nu kan vi göra varje explosion mer unik genom att använda &quot;sätt färg effekten&quot;-blocket, och låta det välja slumpmässiga färger mellan 1 och 200 innan det visas.</li>
+</ol>
+<p><img src="a41d8c0838cf7451166df025c8c60200b907a808.png" alt="
+    när jag tar emot explosion
+
+    göm
+
+    sätt färg effekten till slumptal 1 till 200
+
+    gå till x: x läge av raket y: y läge av raket
+
+    visa
+
+    vänta 1 sek
+
+    göm" /></p>
+<section id="testa-ditt-projekt-5" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Har varje explosion olika färg?</p>
+<ol start="2" type="1">
+<li>Låt oss lägga till ett antal möjliga explosionsbilder som klädslar, genom att använda Resources/firework2.png och Resources/firework3.png, och växla mellan dem för varje raket, innan den visas.</li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-6" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Har varje raket olika explosionsbilder?</p>
+<ol start="3" type="1">
+<li>Slutligen, låt oss göra så att explosionen blir större efter att raketen exploderar! Istället för att vänta en sekund, sätt storleken på spriten till 5% innan den visas, och sedan när den visas öka storleken med 2 femtio gånger genom att använda ett repetitionsblock.</li>
+</ol>
+<p><img src="1c4895b1ccc45bab00f96862cab42097ca68f118.png" alt="
+    när jag tar emot explode
+
+    göm
+
+    sätt färg effekt till slumpvis 1 till 200
+
+    gå till x: x läge av raket y: y läge av raket
+
+    sätt storleken till 5%
+
+    visa
+    
+    repetera 50
+        ändra storlek med 2
+    (slut på repetera)
+
+    göm" /></p>
+</section>
+<section id="testa-ditt-projekt-7" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Sprider sig explosionsbilden från mitten av raketen och växer sakta?</p>
+</section>
+<section id="saker-att-pröva-1" class="level3">
+<h3>Saker att pröva</h3>
+<p>Varför inte försöka göra varje explosion unik genom att ändra storlek och förstoringshastighet?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="steg-4-fixa-sänd-buggen" class="level2">
+<h2>Steg 4: Fixa &quot;Sänd&quot;-buggen</h2>
+<p>Kommer du ihåg att vi tidigare hade problem med att hålla ner musknappen? Detta inträffar på grund av att när raketen sänder explosionen så kommer den att omedelbart repetera om-loopen och skicka ut ett nytt explosionsmeddelande innan den senaste har slutat synas. I datorvärlden kallas sådana problem för &quot;buggar&quot;.</p>
+<ol type="1">
+<li>För att ordna detta kan vi ersätta &quot;sända&quot;-blocket med ett &quot;sända och vänta&quot;-block. På det sättet kommer loopen inte att repeteras förrän explosionen har exploderat färdigt.</li>
+</ol>
+<p><img src="9bf60cab40f0bbf66d21beebdf18ff17c22cffc5.png" alt="
+    när FLAGGAN klickas på
+    göm
+    för alltid om musknappen? 
+        gå till x: mus x y: -200
+        spela ljud bang
+        visa
+        glid 1 sek till x: mus x y: mus y
+        göm
+        sända explosion och vänta
+    (slut på för alltid)" /></p>
+<section id="testa-ditt-projekt-8" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan, håll nere musknappen och flytta muspekaren runt scenen.</strong></p>
+<p>Syns explosionsbilden på rätt plats och vid rätt tid?</p>
+<p>Spara ditt projekt</p>
+<p><strong>Bra gjort du är klar, nu kan du njuta av spelet!</strong></p>
+<p>Glöm inte att du kan dela ditt spel med alla dina vänner och din familj genom att klicka på &quot;Dela ut&quot; på menyn!</p>
+</section>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

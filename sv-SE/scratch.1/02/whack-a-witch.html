@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 1</p>
+<section id="whack-a-witch" class="level1">
+<h1>Whack-a-Witch</h1>
+<p><strong>Introduktion:</strong> Det här projektet är som spelet <strong>Whack-a-Mole</strong>. Du får poäng för att träffa häxorna som kommer upp på skärmen. Målet är att få så många poäng som möjligt på 30 sekunder!</p>
+<section id="steg-1-skapa-en-flygande-häxa" class="level2">
+<h2>STEG 1: Skapa en flygande häxa</h2>
+<ol type="1">
+<li><strong>Skapa ett nytt Scratchprojekt.</strong></li>
+<li><strong>Radera kattspriten</strong> och ersätt bakgrunden med bakgrunden <strong>nature/woods</strong>.</li>
+<li>Använd &quot;ny sprite från fil&quot;-knappen för att lägga till en ny häxsprite till projektet (använd <strong>fantasy/witch1</strong> ).</li>
+</ol>
+<p><strong>Nu vill vi göra så att häxan rör sig.</strong></p>
+<ol start="4" type="1">
+<li>Lägg till en &quot;variabel&quot; för denna sprite som heter &quot;hastighet&quot;. På <strong>Scenen</strong>, ska denna variabel visas som &quot;<strong>Sprite1 hastighet</strong>&quot;. Om det bara står &quot;hastighet&quot;, radera variabeln och skapa den igen, för enbart denna sprite. Klicka bort bocken från rutan bredvid hastighetsblocket i <strong>variablelpaletten</strong> så att den inte syns i Scenfönstret. Hastighetsvariabeln kommer att kontrollera hur snabbt häxan rör sig. Vi använder en variabel så att vi kan ändra hur snabbt häxan rör sig under spelets gång.<br /></li>
+<li>Vi vill att häxan ska börja röra sig när spelet startar, <strong>så gör ett script som ser ut så här</strong>:</li>
+</ol>
+<p><img src="f521ad09141a1ea6a236c81abdece3b008a25300.png" alt="
+    när FLAGGAN klickas på
+
+    sätt hastighet till 5
+
+    För alltid
+
+        gå hastighet steg
+
+    (slut på för alltid)" /></p>
+<section id="testa-ditt-projekt" class="level3">
+<h3>Testa ditt Projekt</h3>
+<p><strong>Klicka på den gröna flaggan</strong> och se vad häxan gör. Varför fastnar hon vid kanten av skärmen?</p>
+<ol start="6" type="1">
+<li>För att förhindra att häxan fastnar måste vi göra så att hon går tillbaka åt andra hållet när hon rör vid kanten av skärmen. Ändra ditt befintliga script genom att lägga till ett &quot;studsa om vid kanten&quot;-block under &quot;gå hastighet steg&quot;-blocket.</li>
+</ol>
+<p><img src="296d4de26c60110b14dcd4658b59bda323bc6ac8.png" alt="
+    när FLAGGAN klickas på
+
+    sätt hastighet till 5
+
+    för alltid
+
+        gå hastighet steg
+
+        studsa om vid kanten
+
+    (slut på för alltid)" /></p>
+<ol start="7" type="1">
+<li>För att förhindra att häxan vänder sig upp och ner, klicka på &quot;enbart vänd vänster-höger&quot;-knappen i Spriteöversiktsområdet.</li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-1" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong> Rör sig häxan från sida till sida över skärmen?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva" class="level3">
+<h3>Saker att pröva</h3>
+<p><strong>Försök att ändra värdet för hastighetsvariabeln så att hon kan flyga snabbare eller långsammare. </strong></p>
+<p><strong>Hur skulle du göra så att häxan flyger snabbare ju längre tid hon flyger?</strong> (Det här är en klurig en, så oroa dig inte om du inte förtår hur man gör. Du kommer att få mer ledtrådar under tiden du arbetar med projektet.)</p>
+</section>
+</section>
+<section id="steg-2-gör-så-att-häxan-syns-och-försvinner-slumpvis." class="level2">
+<h2>STEG 2: Gör så att häxan syns och försvinner slumpvis.</h2>
+<p>För att göra spelet roligare vill vi att häxan ska synas och försvinna slumpvis. Vi gör det med ett annat script som körs samtidigt som det som flyttar häxan. Det nya scriptet behöver gömma häxan en godtycklig tid, sedan visa henne en godtycklig tid, och fortsätta så för alltid (eller tills spelet avslutas).</p>
+<p><strong>Skapa ett script för häxan:</strong></p>
+<p><img src="34e5802a83abd12badeebbd3faa292853d2c220b.png" alt="
+    när FLAGGAN klickas på
+
+    för alltid
+
+        göm
+
+        vänta slumptal 2 till 5 sekunder 
+
+        visa
+
+        vänta slumptal 2 till 5 sekunder
+
+    (slut på för alltid)" /></p>
+<section id="testa-ditt-projekt-2" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong> Rör sig häxan från sida till sida över skärmen och försvinner och dyker hon upp slumpvis?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva-1" class="level3">
+<h3>Saker att pröva</h3>
+<p><strong>Försök att ändra intervallet av slumptal. Vad händer om du väljer väldigt höga siffror eller väldigt låga?</strong> (Ger det här dig några ledtrådar för hur man får häxan att öka hastigheten ju längre spelet håller på? )</p>
+</section>
+</section>
+<section id="steg-3-gör-så-att-häxan-försvinner-när-hon-klickas-på" class="level2">
+<h2>STEG 3: Gör så att häxan försvinner när hon klickas på</h2>
+<p>För att göra detta till ett spel, måste vi ge spelaren något att göra. Den måste klicka på häxan för att få henne att försvinna. När häxan klickas på, vill vi att hon försvinner och spelar ett ljud.</p>
+<ol type="1">
+<li><p>I fliken <strong>Sounds</strong> importerar vi ljudet <strong>electronic/fairydust</strong>.</p></li>
+<li><p><strong>Lägg till detta script till häxan</strong>:</p></li>
+</ol>
+<p><img src="d2559d33afc584af31817b63e74d3cc96d06cede.png" alt="
+    när sprite1 klickas på 
+
+    göm
+
+    spela ljudet Fairydust" /></p>
+<section id="testa-ditt-projekt-3" class="level3">
+<h3>Testa ditt Projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Försvinner häxan och spelar ljudet när du klickar på den?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva-2" class="level3">
+<h3>Saker att pröva</h3>
+<p><strong>Fråga en instruktör om du kan spela in ditt eget ljud för att spela upp.</strong></p>
+</section>
+</section>
+<section id="steg-4-lägg-till-poängsättning-och-tidtagning" class="level2">
+<h2>Steg 4: Lägg till poängsättning och tidtagning</h2>
+<p>Vi har en häxa, men nu vill vi göra ett spel! Vi vill ge poäng varje gång vi klickar på häxan men vi vill även ha en tidsgräns på spelet. Vi kan använda en variabel för poängsättning och tidtagning.</p>
+<ol type="1">
+<li>Skapa en ny &quot;variabel&quot; för sprites som heter <strong>poäng</strong>, och ändra häxans script för att öka varibeln med 1 varje gång hon klickas på.</li>
+</ol>
+<p><img src="1018a8b5948afa4d20c6498971b3bd3f57d708b2.png" alt="
+    när sprite1 klickas på
+
+    göm
+
+    spela ljudet Fairydust
+
+    ändra score med 1" /></p>
+<ol start="2" type="1">
+<li>Byt till <strong>Scenen</strong> och skapa en <strong>ny variabel</strong> (denna gång bara för Scenen) som kallas <strong>timer</strong>. Lägg till ett nytt script som inträffar när den gröna flaggan klickas på som sätter &quot;timer&quot; till <strong>30</strong> och återställer score till <strong>0</strong>. Använd sedan &quot;repetera tills&quot;-blocket för att vänta en sekund och sedan minska &quot;timer&quot; med ett. Detta ska fortgå tills timer är 0, då används &quot;stoppa alla&quot; för att stoppa spelet.</li>
+</ol>
+<p><img src="215f4d0ab03170fe529f311110bf30ba1aa81ab4.png" alt="
+    när FLAGGAN klickas på
+
+    sätt timer till 30
+
+    sätt score till 0
+
+    repetera tills timer = 0
+
+        vänta 1 sekunder
+
+        ändra timer med -1
+
+    (slut på repetera)
+
+    stoppa alla" /></p>
+<section id="testa-ditt-projekt-4" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva-3" class="level3">
+<h3>Saker att pröva</h3>
+<p><strong>Hur kan du göra så att häxan ökar hastigheten under spelets gång?</strong></p>
+<p><strong>Bra gjort, du har gjort klart det grundläggande spelet. Det finns dock fler saker som du kan göra med ditt spel. Prova på den här utmaningen!</strong></p>
+</section>
+</section>
+<section id="utmaning-lägg-till-fler-häxor" class="level2">
+<h2>Utmaning: lägg till fler häxor</h2>
+<p>Om det är bra med en häxa, så måste det vara ännu bättre mer fler! <strong>Låt oss ha tre häxor som flyger omkring.</strong> 1. Duplicera häxan genom att <strong>högerklicka</strong> på den i spritelistan. 2. <strong>Anpassa storleken på spriten</strong> för varje häxa så att häxorna får olika storlek. 3. Byt <strong>hastighetsvariabeln</strong> för varje häxa så att de alla flyger i olika hastigheter. 4. Flytta runt häxorna på skärmen så att de inte är alla på samma plats.</p>
+<section id="testa-ditt-projekt-5" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Har du tre häxor som rör sig från sida till sida över skärmen, som slumpvis syns och försvinner, och försvinner de då du klickar på dem?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva-4" class="level3">
+<h3>Saker att pröva</h3>
+<ol type="1">
+<li><strong>Hur många häxor är ett bra antal för spelet?</strong></li>
+<li><strong>Kan du få häxorna att se olika ut? Du kan antingen ändra deras klädslar eller också använda några block från &quot;Utseende&quot; för att ändra dem.</strong></li>
+<li><strong>Kan du göra så att häxorna är värda olika mycket poäng? Vad sägs om att göra den snabbaste (och minsta) värd 10 poäng?</strong></li>
+</ol>
+<p><strong>Bra gjort, du är klar, nu kan du njuta av spelet!</strong> Glöm inte att du kan dela ditt spel med dina vänner och din familj på <strong>Dela ut</strong> på menyn!</p>
+</section>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

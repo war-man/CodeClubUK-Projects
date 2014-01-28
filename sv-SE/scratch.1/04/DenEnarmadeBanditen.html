@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 2</p>
+<section id="den-enarmade-banditen" class="level1">
+<h1>Den enarmade banditen</h1>
+<p><strong>Introduktion:</strong> I det här spelet finns tre sprites som ändrar klädslar. Du ska stoppa dem när de visar samma bild (som en enarmad bandit!).</p>
+<section id="steg-1-skapa-en-sprite-som-ändrar-klädsel" class="level2">
+<h2>STEG 1: Skapa en sprite som ändrar klädsel</h2>
+<p><strong>Nu ska vi importera bilder till spelet</strong></p>
+<ol type="1">
+<li>Skapa ett nytt Scratchprojekt. Radera katten genom att högerklicka på den och välj radera.</li>
+<li>Importera en ny sprite.</li>
+<li>Välj en bild från valfri mapp. Vi använde things/bananas1, men du kan använda vilken bild du vill.</li>
+<li>Klicka på klädslar-fliken och importera två bilder så att det blir tre bilder totalt<br />(vi använde animals/1 och things/lego, men du kan använda vilka bilder du vill).</li>
+</ol>
+<p><strong>Nu när vi har klädslar vill vi att spriten ska kunna byta mellan dem.</strong></p>
+</section>
+<section id="steg-2-få-bilden-att-ändras" class="level2">
+<h2>STEG 2: Få bilden att ändras</h2>
+<ol type="1">
+<li>Klicka på Scripts-fliken.</li>
+<li>Klicka på Kontroll och dra &quot;när flagga klickas på&quot; till Scriptrutan. Detta kommer att utlösas när vi klickar på den gröna flaggan.</li>
+<li>Lägg till &quot;för alltid&quot; så att den sitter ihop med undersidan av &quot;när flagga klickas på&quot;.</li>
+<li>Klicka på den gröna flaggan i det högra hörnet. Lägg märke till att en vit linje ramar in vårt script. Detta händer eftersom vi klickade på den gröna flaggan.</li>
+<li>Klicka nu på Utseende och dra in &quot;nästa klädsel&quot; så att den passar.</li>
+<li>Hur gör vi så att det går långsammare och den inte ändras så fort? Klicka på Kontroll och dra in &quot;vänta 1 sekunder&quot;.</li>
+<li>Ändra tiden tills det upprepas i en snabbare takt (tiden 0.1 sekunder ser bra ut). Vad skulle hända om vi inte hade väntablocket?</li>
+</ol>
+<pre class="Scratch"><code>
+    när FLAGGA klickas på 
+    för alltid      
+        nästa klädsel
+        vänta 0.1 sekunder
+    (slut på för alltid)</code></pre>
+<section id="testa-ditt-projekt" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong> Ändras klädslarna i lagom takt?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva" class="level3">
+<h3>Saker att pröva</h3>
+<p>Ändra tiden i väntablocket. Vilka siffror tror du skulle göra spelet för lätt eller för svårt?</p>
+</section>
+</section>
+<section id="steg-3-stoppa-spriten-när-vi-klickar-på-den" class="level2">
+<h2>Steg 3: Stoppa spriten när vi klickar på den</h2>
+<p>Bra! Vi kan nu få spritearna att byta klädslar för alltid, men hur får vi dem att stoppa när vi klickar på dem?</p>
+<ol type="1">
+<li>Skapa en ny variabel genom att klicka på Variabler och Ny variabel. Kalla den för &quot;stopp&quot; och välj att den endast ska finnas för denna sprite. Klicka sedan ur rutan bredvid så att variabeln inte syns på scenen.</li>
+<li>Sätt stoppad till 1 när någon klickar på bilden genom att använda &quot;när Sprite 1 klickas på&quot; och &quot;sätt stoppad till 0&quot;. Där du ska byta ut nollan mot en etta.</li>
+<li>Nu måste vi få bilden att sluta ändras när variabeln stoppad blir 1. Klicka på Kontroll och ändra &quot;för alltid&quot;-loopen till &quot;för alltid om&quot; och skapa en ny likhetsoperator för att se om stoppad är lika med 0.<br /></li>
+<li>Slutligen, lägg till en &quot;sätt stoppad till 0&quot; under &quot;när flaggan klickas på&quot;.</li>
+</ol>
+<section id="testa-ditt-projekt-1" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan, vänta en liten stund och klicka sedan på spriten.</strong></p>
+<p>Ändrar den klädsel innan du klickar på den? Slutar den när du klickar på den? <strong>Starta spriten igen.</strong> Stannar den när du håller muspekaren över spriten, utan att klicka på den? Stannar spriten när du klickar någon annanstans på scenen? Någon annanstans i Scratchfönstret? Någonstans utanför Scratchfönstret?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="steg-4-skapa-den-andra-spriten" class="level2">
+<h2>Steg 4: Skapa den andra spriten</h2>
+<p><strong>Nu ska vi skapa de andra spritearna så att vi kan spela vårt spel!</strong></p>
+<ol type="1">
+<li>Duplicera spriten (Sprite1) genom att högerklicka på den i det högra nedre hörnet.</li>
+<li>Duplicera den igen så att det finns tre sprites på skärmen.</li>
+<li>Flytta på varje sprite så att de hamnar bredvid varandra på en linje. Gör dem lite mindre om det behövs.</li>
+</ol>
+<section id="testa-ditt-projekt-2" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong> Alla sprites ska ändras. Försök att få dem alla att stanna på samma bild!</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="saker-att-pröva-1" class="level3">
+<h3>Saker att pröva</h3>
+<p>När du startar spelet precis efter att det har laddats så visar alla sprites samma klädsel och byter klädsel samtidigt. Vad tror du om att försöka få spritearna att ändras till en slumpad klädsel när du klickar på den gröna flaggan? Ledtråd: Försök att välja en slumpmässig klädsel för varje sprite när spelet har börjat.</p>
+<p><strong>Bra gjort, nu är du klar med spelet. Det finns dock fler saker som du kan göra med ditt spel. Försök dig på någon av dessa utmaningar!</strong></p>
+</section>
+</section>
+<section id="utmaning-1-gör-spelet-svårare" class="level2">
+<h2>Utmaning 1: Gör spelet svårare</h2>
+<p>Ändra svårighetsgraden på spelet på något sätt. Att bara ändra hur snabbt klädslarna byts ut är enkelt. Försök göra något kreativt. Här finns några idéer som du kanske vill prova:</p>
+<ol type="1">
+<li>Byt ut antalet klädslar som varje sprite har.</li>
+<li>Se till att vissa sprites har unika klädslar.</li>
+<li>Ha olika tider mellan att klädslarna ändras.</li>
+<li>Få varje sprite att byta till en slumpmässig klädsel snarare än nästa på tur.</li>
+</ol>
+<p><strong>Försök komma på egna roliga saker!</strong></p>
+<p>Varje gång du gör en förändring, fundera på om det gör spelet svårare eller lättare. Är spelet för svårt eller för lätt? Hur kan du anpassa svårighetsgraden så att den blir lagom?</p>
+</section>
+<section id="utmaning-2-få-spelet-att-bli-svårare-och-lättare-allt-eftersom" class="level2">
+<h2>Utmaning 2: Få spelet att bli svårare och lättare allt eftersom</h2>
+<p>Olika personer kommer att vara olika duktiga på att spela spelet. <strong>Hur kan du få spelet att anpassa svårighetsgraden beroende på spelaren?</strong></p>
+<p>Ett sätt att göra det är att <strong>Anpassa hastigheten för klädslarnas byte</strong>. Du kan använda en variabel som kallas <strong>fördröjning</strong>, för att sätta tiden på varje sprites fördröjningsblock. Om spelaren vinner omgången kan fördröjningen minskas en aning (för att göra spelet svårare). Om spelaren förlorar omgången så kan fördröjningen ökas en aning (för att göra spelet lättare).</p>
+</section>
+<section id="utmaning-3-upptäck-när-alla-sprites-har-stannat-med-samma-klädsel" class="level2">
+<h2>Utmaning 3: Upptäck när alla sprites har stannat med samma klädsel</h2>
+<p><strong>Målet med spelet är ju att klicka på spritearna så att de stannar när alla visar samma klädsel. Det hade varit bra om scenen upptäckte när du hade spelat klart och då berättade om du har vunnit eller förlorat genom att kolla om alla sprites har samma klädsel eller inte.</strong></p>
+<p>Först måste scenen veta när spelaren har spelat klart. Vi kan lösa detta genom att låta scenen kolla ifall alla sprites har slutat röra på sig när vi klickar på en av dem. Gå tillbaka och ändra varje &quot;när sprite# klickas&quot;-block så att de sänder ut ett nytt meddelande, kollaOmSlut.</p>
+<p>Scenen kan reagera på detta meddelande och kolla ifall spelet är över genom att titta efter om alla tre spritearnas stoppad-variabler är satta till 1. Det gör den genom att använda &quot;x-läge av sprite&quot; för varje sprite, och ändra &quot;x-läge&quot; till stoppad. Om alla tre sprites har stoppats med värdet 1 vet vi att spelet är över och vi kan kolla ifall spelaren har vunnit.</p>
+<p>För att göra detta kan vi använda samma &quot;x-läge av sprite&quot;-block, men istället för att titta på stoppad-variabeln kan vi titta på klädselnumret och se om Sprite1 har samma klädsel som Sprite2, och ifall Sprite2 har samma klädsel som Sprite3.</p>
+<p>För att göra detta behöver du ett om-block som kollar varje stoppadvariabel, och inne i det ett &quot;om... annars&quot;-block för att se om spelaren har vunnit eller förlorat genom att jämföra varje klädsels nummer.</p>
+<p>Utifrån det här kan du få veta spelets resultat genom att använda ett sända-block och sedan svara på detta med en annan sprite. Du kanske kan ta tillbaka Felix för att gratulera eller tycka synd om spelaren?</p>
+<p><strong>Bra jobbat, du är klar. Nu kan du njuta av spelet!</strong> Glöm inte att dela spelet med alla dina vänner och din familj genom att klicka på <strong>Dela ut</strong> i menyraden!</p>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

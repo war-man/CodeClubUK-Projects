@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 3</p>
+<section id="vad-är-det-där" class="level1">
+<h1>Vad är det där?</h1>
+<p><strong>Introduktion</strong> Ett slumpvist valt föremål visas på svarta tavlan, fast alldeles otydligt. Du ska gissa vad det är genom att klicka på rätt bild under. Ju fortare du gissar, desto högre poäng får du!</p>
+<section id="steg-1-få-olika-saker-att-visas-på-svarta-tavlan" class="level2">
+<h2>STEG 1: Få olika saker att visas på svarta tavlan</h2>
+<p>Vi vill att några olika bilder ska kunna visas på tavlan.</p>
+<ol type="1">
+<li>Påbörja ett nytt Scratchprojekt och ta bort kattspriten.</li>
+<li>Klicka på Scenen och sen fliken Bakgrunder. Importera bakgrunden indoors/chalkboard.</li>
+<li>Importera en ny sprite och ge den en klädsel du gillar. Du kan välja något ur mappen things.</li>
+<li>Placera den nya spriten i mitten av tavlan. Gör den större eller mindre om du behöver.</li>
+<li>Klicka på fliken Klädslar och importera fyra saker till. Vad du vill! Nu tar vi och får en slumpvis bild att visas.</li>
+<li>Skapa det här scriptet:</li>
+</ol>
+<p><img src="dde9cb3bd7248b130bc9f4a13ddfdaefdce1bc47.png" alt="
+    when FLAGGA klickas på
+    repetera slumptal 1 till 5
+        nästa klädsel
+    (slut på repetera)" /></p>
+<section id="testa-ditt-projekt" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Får spriten en annan klädsel?</p>
+<p><strong>Klicka på den några gånger till.</strong> Får du olika klädslar varje gång? Ibland kommer du få samma klädsel två gånger i rad, men det är lugnt. Du kommer också märka att du kan se spriten blinka till när den byter klädsel. Det ska vi lösa i nästa steg.</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="steg-2-gör-bilden-otydlig" class="level2">
+<h2>STEG 2: Gör bilden otydlig</h2>
+<p><strong>Nu ska vi göra så att bilden är otydlig när den dyker upp, och blir tydlig efter några sekunder.</strong></p>
+<p>Vi använder en poängvariabel för att hålla koll på hur otydlig bilden är. Om poängen är hög kommer bilden vara mycket otydlig. I och med att poängen går ner kommer också bilden att bli tydligare. Poängen har också rollen av en timer, som i <strong>Timer-Scratchkortet.</strong></p>
+<ol type="1">
+<li>På variabelpaletten, skapa en variabel som heter poäng.</li>
+<li>Redigera scriptet så att det ser ut såhär:</li>
+</ol>
+<p><img src="4e68dab3b071425af74da42b7eb540274f28ae12.png" alt="    
+    när FLAGGA klickas på
+    göm
+    repetera välj slumptal 1 till 5
+        nästa klädsel
+    (slut på repetera)
+    sätt poäng till 110
+    repetera tills poäng = 0
+        ändra poäng med -10
+        sätt förvandla pixlar effekten till poäng
+        sätt färg effekten till poäng
+        visa
+        vänta 1 sekunder
+    (slut på repetera)" /></p>
+<section id="testa-ditt-projekt-1" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Dyker det upp en slumpvis otydlig bild?</p>
+<p>Minskar otydligheten successivt?</p>
+<p>Går poängen ner i och med att bilden blir mer och mer tydlig?</p>
+<p>Får du en helt tydlig bild när poängen når noll?</p>
+<p>Får du fortfarande en ny bild varje gång du klickar på den gröna flaggan?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="saker-att-pröva" class="level2">
+<h2>Saker att pröva</h2>
+<p><strong>Pröva att ändra startpoängen och hur mycket den ändras för varje gång i loopen.</strong> Hur påverkar det här bildens utseende? Blir det svårare eller lättare att upptäcka vad bilden föreställer?</p>
+<p><strong>Pröva några olika grafikeffekter från rullgardinsmenyerna.</strong> På vilket sätt påverkar de svårighetsgraden?</p>
+</section>
+<section id="steg-3-låt-spelaren-gissa-vad-bilden-föreställer" class="level2">
+<h2>STEG 3: Låt spelaren gissa vad bilden föreställer</h2>
+<p>Så här långt har vi fått vår slumpvisa bild att långsamt dyka upp, och en poängsiffra som blir mindre med tiden, men hur vinner man spelet? Vi ska lägga till några sprites på underdelen av skärmen som spelaren kan klicka på. Om den klickar på rätt vinner den spelet. Om den klickar på fel bild förvinner spriten och spelet fortsätter.</p>
+<p>Först behöver vi veta vad det rätta svaret är.</p>
+<ol type="1">
+<li>Skapa en ny variabel som heter <strong>svar</strong>. Se till att den finns för alla sprites.</li>
+<li>Ändra i scriptet du har skrivit så att det håller koll på rätt svar. Lägg till &quot;sätt [svar] till klädsel #&quot;-blocken precis efter den första repetitionsloopen:</li>
+</ol>
+<p><img src="a30610e7da8ffc0780ee22425308284b9f114145.png" alt="
+    när FLAGGA klickas på
+    göm
+    repetera välj slumptal 1 till 5
+        nästa klädsel
+    (slut på repetera)
+    sätt svar till klädsel
+    sätt poäng till 110
+    repetera tills poäng = 0
+        ändra poäng med -10
+        sätt förvandla pixlar effekten till poäng
+        sätt färg effekten till poäng
+        visa
+        vänta 1 sekunder
+    (slut på repetera)" /></p>
+<p><strong>Nu måste vill lägga till spritearna som spelaren ska kunna klicka på.</strong></p>
+<ol start="3" type="1">
+<li>Duplicera huvudspriten och dra kopian till det nedre vänstra hörnet av scenen.</li>
+<li>Byt namn på spriten till <strong>svar1.</strong> (Det här gör den lättare att prata om sen.)</li>
+<li>Radera <strong>svar1</strong>s script och alla dess klädslar utom den första.</li>
+<li>Gör om de här sista tre stegen, men sätt <strong>svar2</strong>-spriten intill <strong>svar1</strong> och radera alla klädslar utom den första.</li>
+<li>Gör samma sak tre gånger till för <strong>svar3</strong>, <strong>svar4</strong> och <strong>svar5.</strong> Till slut ska du ha en rad med fem svarsprites upradade längst Scenens nedre del, där varje har en av de klädslar huvudspriten kan ha. <strong>Ingen av svarspritearna ska ha något script.</strong></li>
+</ol>
+<p>Nu vill vi att varje sprite ska reagera när man klickar på den, och göra någonting beroende på om den är rätt svar eller inte.</p>
+<ol start="8" type="1">
+<li>Lägg till det här scriptet till svar1-spriten:</li>
+</ol>
+<p><img src="c8b9d428eacf112a7a329567e3aa53092d421bfc.png" alt="    
+    när svar1 klickas på
+    om svar = 1
+        sända vann
+    annars
+        göm
+    (slut på om)" /></p>
+<ol start="9" type="1">
+<li>Dra det här scriptet så det lägger sig hos var och en av de andra svarspritearna. <strong>Byt ut 1 mot 2, 3 och så vidare hos varje sprite.</strong></li>
+<li>Nu måste vi lägga till någonting som svarar på vann-meddelandet. Gå tillbaka till sprite1, alltså den på svarta tavlan. Lägg till det här extrascriptet:</li>
+</ol>
+<p><img src="8e938f28ab6a86342ccc85d6234921331184bf34.png" alt="
+    när jag tar emot vann
+    säg förena Grattis! Du fick poäng poäng i 2 sekunder" /></p>
+<section id="testa-ditt-projekt-2" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>När du testar spelet kan du välja att visa svaret på skärmen för att kolla att spelet fungerar som det ska.</p>
+<p>Vad händer när du klickar på <strong>rätt svar</strong>?</p>
+<p>Vad händer när du klickar på <strong>fel svar?</strong></p>
+<p>Vad händer med de felaktiga svaren när du <strong>påbörjar ett nytt spel?</strong></p>
+<p>Testet resulterar i två problem. Först och främst kommer felaktiga gissningar inte tillbaka när spelet startas om. Dessutom fortsätter poängen räkna ner när vi fått rätt svar.</p>
+<ol start="11" type="1">
+<li>För att lösa det första problemet kan du lägga till det här scriptet hos de fem svarspritearna:</li>
+</ol>
+<p><img src="2cfce01b1b00f1c235047d00e25635940295ca2a.png" alt="
+    när FLAGGA klickas på
+    visa" /></p>
+<p>För att fixa det andra problemet behöver vi stoppa <strong>frågespritens</strong> repetera tills-loop när spelaren klickar på rätt svar. Vi använder en ny variabel för att göra det. Vi sätter den till <strong>noll</strong> när spelet börjar och till <strong>ett</strong> när man har vunnit spelet. Vi gör så att repetera tills-loopen tar slut när antingen poängen når <strong>noll</strong> ELLER när spelvinnarvariabeln är satt till <strong>ett.</strong></p>
+<ol start="12" type="1">
+<li>Skapa en ny variabel som heter vunnit?</li>
+<li>Byt ut scripten så att de ser ut såhär:</li>
+</ol>
+<p><img src="418378ab98079870d41340e84a75d7f4b9e07e2d.png" alt="
+    när FLAGGA klickas på
+    göm
+    repetera välj slumptal 1 till 5
+        nästa klädsel
+    (slut på repetera)
+    sätt svar till klädsel
+    sätt poäng till 110
+    sätt vunnit till 0
+    repetera tills poäng = 0 eller vunnit? = 1
+        ändra poäng med -10
+        sätt förvandla pixlar effekten till poäng
+        sätt färg effekten till poäng
+        visa
+        vänta 1 sekunder
+    (slut på repetera)
+    
+    När jag tar emot vunnit
+    sätt vunnit? till 1
+    ta bort grafisk effekt
+    säg förena Grattis! Du fick poäng poäng i 2 sekunder" /></p>
+<p>Spara ditt projekt</p>
+<p><strong>Bra jobbat, nu är du klar med grundspelet!</strong></p>
+<p>Men det finns fler saker du kan göra i ditt spel. Ta och testa de här utmaningarna!</p>
+</section>
+</section>
+<section id="utmaning-1-gör-spelet-svårare-eller-lättare" class="level2">
+<h2>Utmaning 1: Gör spelet svårare eller lättare</h2>
+<p>Ändra hur svårt spelet är.</p>
+<ul>
+<li>Pröva att ändra hur fort bilden framträder och hur fort poängen går ner.</li>
+<li>Försök ändra effekt på otydligheten i bilden.</li>
+<li>Försök ändra bilderna man ska gissa på, så att de antingen är mer lika varandra eller mer olika. Om du gör det här, glöm då inte att ändra svarspritens klädsel.</li>
+</ul>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-2-gör-olika-typer-av-otydlighet-i-varje-spelomgång" class="level2">
+<h2>Utmaning 2: Gör olika typer av otydlighet i varje spelomgång</h2>
+<p>Som det ser ut nu har varje spelomgång samma typ av otydlighet i gissningsbilden. I steg 2 kanske du prövade några olika effekter som fungerar minst lika bra som färg + pixelförvandlingen vi använde.</p>
+<p>Leta upp några olika otydlighetseffekter som fungerar bra.</p>
+<p>Ändra i spelet så att varje spelomgång använder en ny effekt i repetera tills-loopen.</p>
+<p><strong>Tips:</strong> Pröva att skapa en ny variabel som du kallar &quot;effekt att använda&quot;. Sätt den till ett slumpvist värde i början av spelet. Använd om-block inuti repetera tills-loopen för att lägga till den korrekta effekten för den här spelomgången.</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-3-låt-spelet-ha-flera-rundor" class="level2">
+<h2>Utmaning 3: Låt spelet ha flera rundor</h2>
+<p>Som det ser ut nu är varje spel fristående. Ändra det så att spelet pågår flera rundor. Låt till exempel en spelomgång ha tre rundor, så att spelaren måste gissa tre bilder och kan få upp till 300 poäng.</p>
+<p><strong>Tips:</strong> Du kommer behöva en extra variabel för att hålla koll på den sammanlagda poängen för de olika rundorna. Du kommer också behöva en loop som sträcker sig över de olika rundorna. <strong>Tips:</strong> Du kommer även behöva göra så att de felaktiga gissningarnas bilder kommer tillbaka när nästa runda startar. Du kanske kan lösa det genom att sända ut ett meddelande?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-4-gör-de-senare-rundorna-svårare" class="level2">
+<h2>Utmaning 4: Gör de senare rundorna svårare</h2>
+<p>Gör spelet svårare för varje ny runda du påbörjar.</p>
+<p>Behöver varje runda ge lika mycket poäng? Borde man få mer poäng för att gissa rätt snabbt i de senare, svårare rundorna?</p>
+<p><strong>Tips:</strong> Hur ska du kunna veta vilken runda du befinner dig på? Hur kan du använda det för att ändra svårighetsgrad och poängräkning?</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-5-fortsätt-spelet-tills-spelaren-gissar-fel" class="level2">
+<h2>Utmaning 5: Fortsätt spelet tills spelaren gissar fel</h2>
+<p>Istället för att ha ett förutbestämt antal rundor, gör så att man får spela tills man svarar fel. Det här fungerar förmodligen bara om spelet blir svårare ju längre man kommer.</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-6-gör-spelet-svårare-eller-lättare-beroende-på-hur-duktig-spelaren-är" class="level2">
+<h2>Utmaning 6: Gör spelet svårare eller lättare beroende på hur duktig spelaren är</h2>
+<p>Istället för att alltid göra spelet svårare kan vi göra så att spelet ändrar svårighetsgrad beroende på hur bra det går för spelaren. Om han ellr hon gissar rätt snabbt kan spelet bli lite svårare. Om han eller hon istället tar lång tid på sig att svara rätt, eller svarar fel, då kan du göra spelet lättare.</p>
+<p>Den här idén fungerar bara om du låter bli att räkna samman spelarens poäng från runda till runda.</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-7-håll-koll-på-den-högsta-poängen" class="level2">
+<h2>Utmaning 7: Håll koll på den högsta poängen</h2>
+<p>Håll koll på den högsta poängen. Om någon lyckas slå den, be henne eller honom skriva in sitt namn och uppdatera högsta poängen. Se till att poängen och personens namn syns på skärmen.</p>
+<p>Spara ditt projekt</p>
+</section>
+<section id="utmaning-8-gör-felaktiga-gissningar-dyra" class="level2">
+<h2>Utmaning 8: Gör felaktiga gissningar dyra</h2>
+<p>Som det ser ut nu finns det inget straff om man bara klickar på alla sprites så fort man kan. Ändra i spelet så att poängen går ner lite för varje gång man gissar fel.</p>
+<p>Gör det här spelet bättre?</p>
+<p>Spara ditt projekt</p>
+<p><strong>Snyggt jobbat, nu är du klar! Varsågod och spela.</strong> Glöm inte att du kan dela spelet med kompisar och familj genom att klicka på <strong>Dela ut</strong> i menyn!</p>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

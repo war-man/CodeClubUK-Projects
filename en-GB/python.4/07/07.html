@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Playing against the Computer — </title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  <link rel="stylesheet" href="/css/python.css">
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<header>
+<div class="level">7</div>
+<div class="title">Playing against the Computer</div>
+<div class="logo"><img src="/img/ccuk_logo.svg"/></div>
+</header>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>Today we're going to try and write some code so that the computer can play noughts and crosses. It won't play well at first, but soon it might even win against you!</p>
+</section>
+<section id="step-1-start-with-what-we-have-from-last-week" class="level1 activity">
+<h1>Step 1: Start with what we have from last week</h1>
+<p>In Lesson 6, we wrote a two player noughts and crosses game, using the &quot;Tk Canvas&quot; to draw on the screen, before we start writing new code, we're going to need the basic part of the game.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ol type="1">
+<li><p>Open IDLE, and either open your file from last week and save it as a new file, or if you can't find it, copy the following in:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> tkinter <span class="ch">import</span> *
+
+main = Tk()
+
+c = Canvas(main, width=<span class="dv">600</span>, height=<span class="dv">600</span>)
+c.pack()
+
+c.create_line(<span class="dv">200</span>, <span class="dv">0</span>, <span class="dv">200</span>, <span class="dv">600</span>)
+c.create_line(<span class="dv">400</span>, <span class="dv">0</span>, <span class="dv">400</span>, <span class="dv">600</span>)
+
+c.create_line(<span class="dv">0</span>, <span class="dv">200</span>, <span class="dv">600</span>, <span class="dv">200</span>)
+c.create_line(<span class="dv">0</span>, <span class="dv">400</span>, <span class="dv">600</span>, <span class="dv">400</span>)
+
+shape = <span class="st">&quot;O&quot;</span>
+grid = [
+    <span class="co">&quot;0&quot;</span>, <span class="st">&quot;1&quot;</span>, <span class="st">&quot;2&quot;</span>, 
+    <span class="co">&quot;3&quot;</span>, <span class="st">&quot;4&quot;</span>, <span class="st">&quot;5&quot;</span>,
+    <span class="co">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, 
+]
+
+
+<span class="kw">def</span> click(event):
+    <span class="kw">global</span> shape, grid
+    across = <span class="dt">int</span>(c.canvasx(event.x)/<span class="dv">200</span>)
+    down = <span class="dt">int</span>(c.canvasy(event.y)/<span class="dv">200</span>)
+
+    square = across + (down*<span class="dv">3</span>)
+
+    <span class="kw">if</span> grid[square] == <span class="st">&quot;X&quot;</span> or grid[square] == <span class="st">&quot;O&quot;</span>:
+        <span class="kw">return</span>
+
+    <span class="kw">if</span> winner():
+        <span class="kw">return</span>
+
+    <span class="kw">if</span> shape == <span class="st">&quot;O&quot;</span>:
+        c.create_oval(
+            across*<span class="dv">200</span>,down*<span class="dv">200</span>,
+            (across<span class="dv">+1</span>)*<span class="dv">200</span>,(down<span class="dv">+1</span>)*<span class="dv">200</span>
+        )
+        grid[square] = <span class="st">&quot;O&quot;</span>
+        shape = <span class="st">&quot;X&quot;</span>
+    <span class="kw">else</span>:
+        c.create_line(
+            across*<span class="dv">200</span>, down*<span class="dv">200</span>,
+            (across<span class="dv">+1</span>)*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>
+        )
+        c.create_line(
+            across*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>,
+            (across<span class="dv">+1</span>)*<span class="dv">200</span>, down*<span class="dv">200</span>
+        )
+        grid[square] = <span class="st">&quot;X&quot;</span>
+        shape = <span class="st">&quot;O&quot;</span>
+
+<span class="kw">def</span> winner():
+    <span class="kw">for</span> across in <span class="dt">range</span>(<span class="dv">3</span>):
+        row = across*<span class="dv">3</span>
+        line = grid[row] + grid[row<span class="dv">+1</span>] + grid[row<span class="dv">+2</span>]
+        <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span>
+
+    <span class="kw">for</span> down in <span class="dt">range</span>(<span class="dv">3</span>):
+        line = grid[down] + grid[down<span class="dv">+3</span>] + grid[down<span class="dv">+6</span>]
+        <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span>
+
+    line = grid[<span class="dv">0</span>]+grid[<span class="dv">4</span>]+grid[<span class="dv">8</span>]
+
+    <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span>
+
+    line = grid[<span class="dv">2</span>]+grid[<span class="dv">4</span>]+grid[<span class="dv">6</span>]
+
+    <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span>
+
+
+c.bind(<span class="st">&quot;&lt;Button-1&gt;&quot;</span>, click)
+
+mainloop()</code></pre></li>
+<li><p>Save and run the program, make sure it works!</p>
+<p>You should be able to click on squares, to place circles and crosses until there are three in a row.</p></li>
+</ol>
+</section>
+</section>
+<section id="step-2-play-anywhere" class="level1 activity">
+<h1>Step 2: Play anywhere</h1>
+<p>Before we can teach the computer how to make a good move, we should teach it to make any move. We will get the computer to pick any free square and play there.</p>
+<p>Remember that we use the variable <code>grid</code> to store how the board looks. It's a list that starts off [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, ... ], and we replace elements with &quot;X&quot; or &quot;O&quot; as the game progresses. We will have to find a free spot, then play it.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ol type="1">
+<li><p>At the top of the file, we will have to import the <code>random</code> library, so we can pick a move</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> tkinter <span class="ch">import</span> *
+<span class="ch">import</span> random</code></pre>
+<p>You hopefully remember using <code>random.choice</code> from the earlier lessons.</p></li>
+<li><p>In the same file we will introduce a new function, <code>free_squares</code>:</p>
+<p>Add this code below the function <code>winner</code>, and above the line <code>c.bind(...)</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> free_squares():
+    output = []
+    <span class="kw">for</span> position, square in <span class="dt">enumerate</span>(grid):
+        <span class="kw">if</span> square != <span class="st">&quot;X&quot;</span> and square != <span class="st">&quot;O&quot;</span>:
+            output.append(position)
+    <span class="kw">return</span> output</code></pre>
+<p>This function creates an empty list, and then for each square in the grid, checks if it is empty.</p>
+<p>We use a function <code>enumerate</code> to tell us the positions of each item in the list. <code>enumerate</code> turns a list of ['A','B','C'] into pairs of (0, 'A'), (1,'B') and so on, so we don't have to count them</p></li>
+<li><p>Next we write a function <code>play_move()</code> which finds an empty square to play in. Add this function after <code>free_squares</code> and before the line <code>c.bind(...)</code></p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> play_move()
+    moves = free_squares()
+    move = random.choice(moves)
+
+    down = move // <span class="dv">3</span>
+    across = move % <span class="dv">3</span>
+
+    grid[move] = <span class="st">&quot;X&quot;</span>
+    c.create_line(
+        across*<span class="dv">200</span>, down*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>
+    )
+    c.create_line(
+        across*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>, down*<span class="dv">200</span>
+    )</code></pre>
+<p>First we get the list of empty squares, pick one, and convert the square number into across and down, using the <code>%</code> and <code>//</code> operators. Let's look at the numbered grid to see how this works:</p>
+<pre><code>     0 1 2
+     -----
+ 0 | 0 1 2
+ 1 | 3 4 5
+ 2 | 6 7 8</code></pre>
+<p>The 5 square is 1 down, and 2 across. If we divide 5 by 3, we get 1 with remainder 2</p>
+<p><code>5 // 3</code> is 1, <code>6 // 3</code> is 2, and so on. The <code>//</code> operator gives us how many times 3 divides it, but ignores the remainder, which tells us how far down we must go.</p>
+<p><code>5 % 3</code> is 2, <code>6 % 3</code> is 0. The <code>%</code> operator gives us the remainder, which is how far along we must go.</p></li>
+<li><p>Now we will edit the click() function to use <code>play_move</code>, so after you click, the computer makes a move.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> click(event):
+    <span class="kw">global</span> shape, grid
+    across = <span class="dt">int</span>(c.canvasx(event.x)/<span class="dv">200</span>)
+    down = <span class="dt">int</span>(c.canvasy(event.y)/<span class="dv">200</span>)
+
+    square = across + (down*<span class="dv">3</span>)
+
+    <span class="kw">if</span> grid[square] == <span class="st">&quot;X&quot;</span> or grid[square] == <span class="st">&quot;O&quot;</span>:
+        <span class="kw">return</span>
+
+    <span class="kw">if</span> winner():
+        <span class="kw">return</span>
+
+    c.create_oval(
+        across*<span class="dv">200</span>,down*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>,(down<span class="dv">+1</span>)*<span class="dv">200</span>
+    )
+    grid[square] = <span class="st">&quot;O&quot;</span>
+
+    <span class="kw">if</span> winner():
+        <span class="kw">return</span>
+
+    play_move()</code></pre>
+<p>We check to see if the player has won, and if not, the computer will play a move!.</p></li>
+<li><p>Save your program and run it. The computer should play a move after you do. It should not play the game very well.</p></li>
+</ol>
+</section>
+</section>
+<section id="step-3-pick-a-move-that-wins" class="level1 activity">
+<h1>Step 3: Pick a move that wins</h1>
+<p>The computer can play noughts and crosses, but badly. Let's help it a little. Instead of picking a random move, let's make it pick a move that wins, if it sees one. The idea is that we can try each move in turn and see if it wins, and then play it.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ol type="1">
+<li><p>Edit the <code>winner</code> function to take an argument <code>grid</code>:</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> winner(grid):
+    <span class="kw">for</span> across in <span class="dt">range</span>(<span class="dv">3</span>):
+        row = across*<span class="dv">3</span>
+        line = grid[row] + grid[row<span class="dv">+1</span>] + grid[row<span class="dv">+2</span>]
+        <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span>
+
+    <span class="kw">for</span> down in <span class="dt">range</span>(<span class="dv">3</span>):
+        line = grid[down] + grid[down<span class="dv">+3</span>] + grid[down<span class="dv">+6</span>]
+        <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span>
+
+    line = grid[<span class="dv">0</span>]+grid[<span class="dv">4</span>]+grid[<span class="dv">8</span>]
+
+    <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span>
+
+    line = grid[<span class="dv">2</span>]+grid[<span class="dv">4</span>]+grid[<span class="dv">6</span>]
+
+    <span class="kw">if</span> line == <span class="st">&quot;XXX&quot;</span> or line == <span class="st">&quot;OOO&quot;</span>:
+            <span class="kw">return</span> <span class="ot">True</span></code></pre>
+<p>You should only have to change the first line of the function. This means <code>winner</code> will use a grid passed to it, instead of the grid of the current game</p></li>
+<li><p>Now we change <code>click</code> to pass in this grid.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> click(event):
+    <span class="kw">global</span> shape, grid
+    across = <span class="dt">int</span>(c.canvasx(event.x)/<span class="dv">200</span>)
+    down = <span class="dt">int</span>(c.canvasy(event.y)/<span class="dv">200</span>)
+
+    square = across + (down*<span class="dv">3</span>)
+
+    <span class="kw">if</span> grid[square] == <span class="st">&quot;X&quot;</span> or grid[square] == <span class="st">&quot;O&quot;</span>:
+        <span class="kw">return</span>
+
+    <span class="kw">if</span> winner(grid):
+        <span class="kw">return</span>
+
+    c.create_oval(
+        across*<span class="dv">200</span>,down*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>,(down<span class="dv">+1</span>)*<span class="dv">200</span>
+    )
+    grid[square] = <span class="st">&quot;O&quot;</span>
+
+    <span class="kw">if</span> winner(grid):
+        <span class="kw">return</span>
+
+    play_move()</code></pre>
+<p>Every time you see <code>winner()</code>, you replace it with <code>winner(grid)</code>.</p></li>
+<li><p>Run your code, it should work like before. It is important to make sure we haven't made any mistakes.</p></li>
+<li><p>Let's change play_move to find a winning move!</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> play_move():
+    move = -<span class="dv">1</span>
+    moves = free_squares()
+    <span class="kw">if</span> not moves:
+        <span class="kw">return</span>
+
+    <span class="co"># find winning move if exists</span>
+    <span class="kw">for</span> possible in moves:
+        new_grid = <span class="dt">list</span>(grid)
+        new_grid[possible] = <span class="st">&quot;X&quot;</span>
+        <span class="kw">if</span> winner(new_grid):
+            move = possible
+            <span class="kw">break</span>
+
+    <span class="kw">if</span> move &lt;<span class="dv">0</span>:
+        move = random.choice(moves)
+
+    across, down = move%<span class="dv">3</span>, move//<span class="dv">3</span>
+
+    grid[move] = <span class="st">&quot;X&quot;</span>
+    c.create_line(
+        across*<span class="dv">200</span>, down*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>
+    )
+    c.create_line(
+        across*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>, down*<span class="dv">200</span>
+    )</code></pre>
+<p>We make a copy of the grid, using <code>list(grid)</code>, place an X where we could play, and call <code>winner</code> to see if it wins!</p></li>
+<li><p>Run and test your program. If the computer is lucky, it should try and win.</p></li>
+</ol>
+</section>
+<section id="try" class="level2 try">
+<h2>Try</h2>
+<p>Try playing a few games and seeing what happens.</p>
+</section>
+</section>
+<section id="step-4-pick-the-move-that-blocks" class="level1 activity">
+<h1>Step 4: Pick the move that blocks</h1>
+<p>The other strategy we will use, is to look for a winning move for the player, and play it instead. I.e block any potential three in a row.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ol type="1">
+<li><p>Edit <code>play_move</code> to find the players winning move, and block it!</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="kw">def</span> play_move():
+    move = -<span class="dv">1</span>
+    moves = free_squares()
+    <span class="kw">if</span> not moves:
+        <span class="kw">return</span>
+
+    <span class="co"># find winning move if exists</span>
+    <span class="kw">for</span> possible in moves:
+        new_grid = <span class="dt">list</span>(grid)
+        new_grid[possible] = <span class="st">&quot;X&quot;</span>
+        <span class="kw">if</span> winner(new_grid):
+            move = possible
+            <span class="kw">break</span>
+
+    <span class="kw">if</span> move &lt; <span class="dv">0</span>:
+        <span class="kw">for</span> possible in moves:
+            new_grid = <span class="dt">list</span>(grid)
+            new_grid[possible] = <span class="st">&quot;O&quot;</span>
+            <span class="kw">if</span> winner(new_grid):
+                move = possible
+                <span class="kw">break</span>
+
+    <span class="kw">if</span> move &lt;<span class="dv">0</span>:
+        move = random.choice(moves)
+
+    across, down = move%<span class="dv">3</span>, move//<span class="dv">3</span>
+
+    grid[move] = <span class="st">&quot;X&quot;</span>
+    c.create_line(
+        across*<span class="dv">200</span>, down*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>
+    )
+    c.create_line(
+        across*<span class="dv">200</span>, (down<span class="dv">+1</span>)*<span class="dv">200</span>,
+        (across<span class="dv">+1</span>)*<span class="dv">200</span>, down*<span class="dv">200</span>
+    )</code></pre></li>
+<li><p>Run your code, and try to win. It should be a lot harder to beat the computer.</p></li>
+</ol>
+</section>
+</section>
+<section id="the-complete-program" class="level1 activity">
+<h1>The Complete Program</h1>
+<p>Your final program should look something like this!</p>
+<pre><code>```python
+from tkinter import *
+import random 
+main = Tk()
+
+c = Canvas(main, width=600, height=600)
+c.pack()
+
+c.create_line(200, 0, 200, 600)
+c.create_line(400, 0, 400, 600)
+
+c.create_line(0, 200, 600, 200)
+c.create_line(0, 400, 600, 400)
+
+grid = [
+    &quot;0&quot;, &quot;1&quot;, &quot;2&quot;, 
+    &quot;3&quot;, &quot;4&quot;, &quot;5&quot;,
+    &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, 
+]
+    
+
+def click(event):
+    global shape, grid
+    across = int(c.canvasx(event.x)/200)
+    down = int(c.canvasy(event.y)/200)
+
+    square = across + (down*3)
+
+    if grid[square] == &quot;X&quot; or grid[square] == &quot;O&quot;:
+        return
+
+    if winner(grid):
+        return
+
+    c.create_oval(
+        across*200,down*200,
+        (across+1)*200,(down+1)*200
+    )
+    grid[square] = &quot;O&quot;
+
+    if winner(grid):
+        return
+
+def winner(grid):
+    for across in range(3):
+        row = across*3
+        line = grid[row] + grid[row+1] + grid[row+2]
+        if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+        
+    for down in range(3):
+        line = grid[down] + grid[down+3] + grid[down+6]
+        if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+
+    line = grid[0]+grid[4]+grid[8]
+
+    if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+
+    line = grid[2]+grid[4]+grid[6]
+        
+    if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+
+def play_move():
+    move = -1
+    moves = free_squares()
+    if not moves:
+        return
+
+    # find winning move if exists
+    for possible in moves:
+        new_grid = list(grid)
+        new_grid[possible] = &quot;X&quot;
+        if winner(new_grid):
+            move = possible
+            break
+
+    if move &lt; 0:
+        for possible in moves:
+            new_grid = list(grid)
+            new_grid[possible] = &quot;O&quot;
+            if winner(new_grid):
+                move = possible
+                break
+        
+    if move &lt;0:
+        move = random.choice(moves)
+        
+    across, down = move%3, move//3
+    
+    grid[move] = &quot;X&quot;
+    c.create_line(
+        across*200, down*200,
+        (across+1)*200, (down+1)*200
+    )
+    c.create_line(
+        across*200, (down+1)*200,
+        (across+1)*200, down*200
+    )
+    
+def free_squares():
+    output = []
+    for position, square in enumerate(grid):
+        if square != &quot;X&quot; and square != &quot;O&quot;:
+            output.append(position)
+    return output
+        
+c.bind(&quot;&lt;Button-1&gt;&quot;, click)
+
+mainloop()
+```</code></pre>
+<section id="challenge" class="level2 challenge">
+<h2>Challenge</h2>
+<p>It's still possible to win against the program, but can you make changes to it to make it play perfectly?</p>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

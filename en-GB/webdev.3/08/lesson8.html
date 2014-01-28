@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Audio and video on web pages — </title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<header>
+<div class="level">Lesson 8</div>
+<div class="title">Audio and video on web pages</div>
+<div class="logo"><img src="/img/ccuk_logo.svg"/></div>
+</header>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>There are a few ways to add videos or audio to your pages. Let's have a closer look at them together.</p>
+</section>
+<section id="add-a-video-from-youtube" class="level1 activity">
+<h1>Add a video from YouTube</h1>
+<p>Adding videos from YouTube is really simple.</p>
+<ul>
+<li>Go to the video page on YouTube.</li>
+<li>Under the video player you can find the <code>Share</code> button. Click that.</li>
+<li>To get the code you can use on your web page, click <code>Embed</code>.</li>
+</ul>
+<p>It will look something like this:</p>
+<pre><code>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/FxhGIajRsq4&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+<p>This specific code fragment would add a CodeClub video to your page. Just copy and past it where you would like the video to appear.</p>
+<p>Notice the <code>width</code> and <code>height</code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</p>
+</section>
+<section id="add-a-video-from-vimeo." class="level1 activity">
+<h1>Add a video from Vimeo.</h1>
+<ul>
+<li>Go to the video page on Vimeo.</li>
+<li>Click the <code>Share</code> button on the video player.</li>
+<li>On the right hand side there is an Embed box. Click it to select the code and copy it. It will look a bit like this:</li>
+</ul>
+<iframe src="http://player.vimeo.com/video/44738167?title=0&amp;byline=0&amp;portrait=0&amp;badge=0" width="600" height="338" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+<ul>
+<li>Paste the code where you would like the video to appear on the page. Notice the <code>width</code> and <code>height</code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</li>
+</ul>
+</section>
+<section id="adding-a-video-file-from-your-computer" class="level1 activity">
+<h1>Adding a video file from your computer</h1>
+<p>If you have a video you have created you can put it on your page without having to upload it to YouTube or Vimeo.</p>
+<ul>
+<li><p>To place a video on your page you will need to add a <code>video</code> tag. Just like the <code>&lt;img&gt;</code> tag is has the <code>src</code> attribute pointing to the file:</p>
+<video src="spaceship_landing.mp4">
+</video>
+</li>
+</ul>
+<p>Sadly the annoying thing about adding video that was is that not every browser can play all of the video formats. You will have to save it in at least <code>.mp4</code> and <code>.ogv</code> formats, which will work in most browsers.</p>
+<p>To let the browser know we have more than one format of video ready, write it like this:</p>
+<pre><code>&lt;video&gt;
+    &lt;source src=&quot;spaceship_landing.ogv&quot; type=&quot;video/ogg&quot;&gt;
+    &lt;source src=&quot;spaceship_landing.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;</code></pre>
+<ul>
+<li><p>To add a picture that will be seen before the video plays, you can use a <code>poster</code> attribute:</p>
+<video poster="spaceship_landing.jpg">
+    
+<source src="spaceship_landing.ogv" type="video/ogg"> <source src="spaceship_landing.mp4" type="video/mp4">
+</video>
+</li>
+<li><p>If you want to automatically play the video, you can add the <code>autoplay</code> keyword, like this:</p>
+<video poster="spaceship_landing.jpg" autoplay>
+    
+<source src="spaceship_landing.ogv" type="video/ogg"> <source src="spaceship_landing.mp4" type="video/mp4">
+</video>
+</li>
+<li><p>To display video controls, such as the play button, the volume and so on you can add the <code>controls</code> keyword:</p>
+<video poster="spaceship_landing.jpg" controls>
+    
+<source src="spaceship_landing.ogv" type="video/ogg"> <source src="spaceship_landing.mp4" type="video/mp4">
+</video>
+</li>
+<li><p>You can also control the size of the video using the <code>width</code> and <code>height</code> attributes. Write this:</p>
+<video poster="spaceship_landing.jpg" width="600" height="400">
+    
+<source src="spaceship_landing.ogv" type="video/ogg"> <source src="spaceship_landing.mp4" type="video/mp4">
+</video>
+</li>
+</ul>
+</section>
+<section id="adding-an-audio-file-from-your-computer" class="level1 activity">
+<h1>Adding an audio file from your computer</h1>
+<p>The way to add audio files to your page from your computer is similar to adding video file.</p>
+<ul>
+<li><p>To place the audio on page write this:</p>
+<p><audio src="spaceship.mp3"> </audio></p></li>
+</ul>
+<p>Notice the <code>src</code> attribute which points to the file.</p>
+<p>Just like with video, not every browser can play every type of audio file, so to make sure as many people as possible can hear the audio you have to add the file in more than one format, at least in <code>.mp3</code> and <code>.oga</code>.</p>
+<pre><code>&lt;audio&gt;
+    &lt;source src=&quot;spaceship.mp3&quot; type=&#39;audio/mp3&#39;&gt;
+    &lt;source src=&quot;spaceship.ogg&quot; type=&#39;audio/ogg; codecs=vorbis&#39;&gt;
+&lt;/audio&gt;</code></pre>
+<ul>
+<li><p>To add the controls you need to add the <code>controls</code> keyword:</p>
+<p><audio controls> <source src="spaceship.mp3" type='audio/mp3'> <source src="spaceship.ogg" type='audio/ogg; codecs=vorbis'> </audio></p></li>
+<li><p>If you want the audio to play as soon as the page loads, you can add the <code>autoplay</code> keyword, like this:</p>
+<p><audio controls autoplay> <source src="spaceship.mp3" type='audio/mp3'> <source src="spaceship.ogg" type='audio/ogg; codecs=vorbis'> </audio></p></li>
+</ul>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

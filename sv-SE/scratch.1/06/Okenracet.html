@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+</head>
+<body>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<p>Nivå 2</p>
+<section id="ökenracet" class="level1">
+<h1>Ökenracet</h1>
+<p><strong>Introduktion:</strong> Det här är ett spel för två personer där en papegoja och ett lejon har kapplöpning genom öknen. Varje spelare ska slå på en tangent så fort den kan för att flytta på sitt djur, och den första som når kanten på skärmen vinner.</p>
+<section id="steg-1-skapa-scenen-och-lägg-till-sprites" class="level2">
+<h2>STEG 1: Skapa scenen och lägg till sprites</h2>
+<ol type="1">
+<li>Välj Scenen och lägg till ökenbakgrunden (öken heter desert på engelska)</li>
+<li>Lägg till en ny sprite, välj lejonspriten som du hittar i mappen animals.</li>
+<li>Lägg till en sprite till, nu papegojspiten som du också hittar i mappen animals.</li>
+</ol>
+</section>
+<section id="steg-2-få-lejonet-och-papegojan-att-röra-på-sig" class="level2">
+<h2>STEG 2: Få lejonet och papegojan att röra på sig</h2>
+<p>Vi will att spritearna ska röra på sig när du trycker ner en tangent.</p>
+<ol type="1">
+<li>Börja med att välja lejonspriten och säg åt den att flytta sig 4 steg när du trycken ner tangenten &quot;L&quot;.</li>
+</ol>
+<p><img src="feeb31e7216dbf46b92d5a24c4cf8d8244cacd4a.png" alt="
+    när l trycks
+    gå 4 steg" /></p>
+<ol start="2" type="1">
+<li>Välj sen papegojspriten och gör så att den rör sig 4 steg när du trycker på tangenten &quot;A&quot;.</li>
+</ol>
+<p><img src="968ea04eccafbfe2404f91d42ee6776dfe017efa.png" alt="
+    när a trycks
+    gå 4 steg" /></p>
+<section id="testa-ditt-projekt" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan Rör sig ditt lejon och din papegoja över skärmen när du trycker ner A och L?</strong></p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="steg-3-starta-racet" class="level2">
+<h2>STEG 3: Starta racet</h2>
+<p>Vi behöver ha ett sätt att påbörja racet och att veta vem som har vunnit. <strong>Först skapar vi en startknapp.</strong></p>
+<ol type="1">
+<li>Lägg till en ny sprite från en fil. Välj knappspriten inuti mappen &quot;things&quot;.</li>
+<li>Redigera klädseln på knappspriten, lägg till texten &quot;Starta&quot; och klicka på OK. Flytta spriten till mitten av scenen.</li>
+<li>Lägg nu till ett script som visar spriten när projektet körs igång:</li>
+</ol>
+<p><img src="4366bb86fccaf828b51d883ad4a529fb2d831e00.png" alt="
+    when FLAGGA klickas på
+    visa" /></p>
+<ol start="4" type="1">
+<li>Nu vill vi att knappen ska räkna ner från 3 och sen säga &quot;GÅ!&quot;, och sen gömmas när den klickas på. Lägg till ett script som ser ut såhär:</li>
+</ol>
+<p><img src="878a87854ca4f0a1b9db93505fcdcac6e0f42ab8.png" alt="
+    när Start klickas på
+    säg klara i 1 sekunder
+    säg färdiga i 1 sekunder
+    säg GÅ! i en sekunder
+    göm" /></p>
+<section id="testa-ditt-projekt-1" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>När du trycken på startknappen, räknar den ner till starten och försvinner sen?</p>
+<p>Spara ditt projekt</p>
+<p>Vi will bara att de tävlande ska röra på sig efter att racet har startat och vi vill veta när racet är slut så vi behöver en variabel som kan hålla koll på den informationen.</p>
+<ol start="5" type="1">
+<li>Lägg till en variabel till alla sprites som du kallar springer. Kryssa ur rutan intill den så att den inte visas på scenen.</li>
+<li>Sätt nu springer till 0 när projektet börjar köras. Ändra i ditt &quot;när FLAGGA klickas på&quot;-script så att det ser ut såhär:</li>
+</ol>
+<p><img src="e8652e12987a14c3c314803a85c23f726863013b.png" alt="
+    when FLAGGA klickas på
+    visa
+    sätt springer till 0" /></p>
+<ol start="7" type="1">
+<li>Nu ska du sätta springer-variabeln till att bli 1 när nedräkningen är klar.</li>
+<li>Sen behöver vi stoppa lejonet och papegojan från att röra sig om inte springer-variabeln är satt till 1. Klicka på papegojspriten. <strong>Lägg till ett kontrollblock i scriptet</strong> som bara tillåter papegojan att röra sig om <strong>springer = 1</strong>.</li>
+</ol>
+<p><img src="1f9d2fdc007756da93ab059b10dc9bca4841621c.png" alt="
+    när a trycks
+    om springer = 1
+        gå 4 steg
+    (slut på om)" /></p>
+<ol start="9" type="1">
+<li>Gör nu samma sak för lejonspriten.</li>
+</ol>
+</section>
+<section id="testa-ditt-projekt-2" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Flyttar sig lejonet och papegojan bara efter att nedräkningen är färdig?</p>
+<p>Vi vill veta vem som vinner racet och återställa det när det är slut så att du kan tävla igen.</p>
+</section>
+</section>
+<section id="step-4-målgången" class="level2">
+<h2>STEP 4: Målgången</h2>
+<ol type="1">
+<li>Lägg till ett block i papegojans script som sätter springer-variabeln till 0 när spriten nuddar kanten av skärmen (mål).</li>
+</ol>
+<p><img src="b7bb4d13675aeb69435d78fa60401d3bb61ffe62.png" alt="
+    när a trycks
+    om springer = 1
+        gå 4 steg
+        om rör kant?
+            sätt springer till 0
+        (slute på om)
+    (slut på om)" /></p>
+<ol start="2" type="1">
+<li>Nu vill vi att papegojan ska säga till om den har vunnit racet. Spela in ett nytt ljud till papegojspriten som spelas upp när papegojan vinner. Klicka på <strong>ljud</strong> och spela sen in ljudet av papegojan som vinner racet!</li>
+<li>Lägg nu till block som spelar upp ditt inspelade ljud och får papegojan att säga det när den har vunnit:</li>
+</ol>
+<p><img src="55bb149f69c80a2c648f8b23d9c812dd6c615da2.png" alt="
+    när a trycks
+    om springer = 1
+        gå 4 steg
+        om rör kant?
+            sätt springer till 0
+            spela ljud recording1
+            säg Papegojan vann! i 3 sekunder
+        (slut på om)
+    (slut på om)" /></p>
+<ol start="4" type="1">
+<li>Repetera nu samma steg för lejonet.</li>
+</ol>
+<section id="testa-ditt-projekt-3" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Kan du trycka på startknappen och racea genom att trycka på A och L-tangenterna? Gör spritearna sina vinnarljud och säger att de har vunnit när de når mål (kanten på skärmen)?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="steg-5-nollställa-spelet" class="level2">
+<h2>STEG 5: Nollställa spelet</h2>
+<p>När kapplöpningen är slut behöver vi berätta för de andra spritearna att vi har vunnit och nollställa spelet så att vi kan spela igen.</p>
+<p><strong>Vi behöver få vinnarspriten att sända ut att den har vunnit.</strong></p>
+<ol type="1">
+<li>Klicka på papegojspriten. Lägg till ett block som sänder ut &quot;klar&quot; efter att spriten säger att den har vunnit.</li>
+</ol>
+<p><img src="03aaf6c82ac027c562dc710174497710b0d3b7b5.png" alt="
+    när a trycks
+    om springer = 1
+        gå 4 steg
+        om rör kant?
+            sätt springer till 0
+            spela ljud recording1
+            säg Papegojan vann! i 3 sekunder
+            sända klar
+        (slut på om)
+    (slut på om)" /></p>
+<ol start="2" type="1">
+<li>Nu behöver vi lägga till ett script som lyssnar till klar-meddelandet och flyttar tillbaka papegojan till startlinjen. Vad händer om du ändrar värdet för x?</li>
+</ol>
+<p><img src="2764f17a4bf462ad99899cb5839fa342cc3814df.png" alt="
+    when jag tar emot klar
+    sätt x till -175" /></p>
+<ol start="3" type="1">
+<li>Lägg nu till samma script för lejonet. Pröva olika x-värden för att se till att lejonet och papegojan båda är på startlinjen.</li>
+<li>Vi vill också att lejonet och papegojan ska vara på samma ställe när projektet körs, så lägg till ännu ett script till båda som flyttar dem till startlinjen när vi klickar på flaggan.</li>
+</ol>
+<p><img src="03896db4ad5e57241ed21c2243146f67f642cfe5.png" alt="
+    när FLAGGA klickas på
+    sätt x till -175" /></p>
+<ol start="5" type="1">
+<li>Klicka nu på knappspriten och lägg till ett script som visar den när den tar emot klar-meddelandet.</li>
+</ol>
+<section id="testa-ditt-projekt-4" class="level3">
+<h3>Testa ditt projekt</h3>
+<p><strong>Klicka på den gröna flaggan.</strong></p>
+<p>Kan du tävla mot en kompis genom att en av er slår på A för att flytta papegojan och den andra flyttar lejonet genom att slå på L?</p>
+<p>Spara ditt projekt</p>
+</section>
+</section>
+<section id="utmaning-lägg-till-en-booster" class="level2">
+<h2>Utmaning: Lägg till en booster</h2>
+<ul>
+<li><strong>Pröva att lägga till en booster</strong> som du kan använda en gång för varje race och som flyttar papegojan eller lejonet <strong>30 steg på en gång</strong>.</li>
+<li><strong>Lägg till en ny klädsel</strong> med eld som sprutar från spriten och få den att visas när boosten används.</li>
+<li><strong>Skapa ett nytt ljud</strong> som spriten kan göra när boosten används.</li>
+</ul>
+<section id="testa-ditt-projekt-5" class="level3">
+<h3>Testa ditt projekt</h3>
+<p>Spara ditt projekt</p>
+<p><strong>Bra jobbat, nu är du klar och kan spela ditt spel!</strong> Glöm inte att du kan dela spelet med dina kompisar och din familj genom att klicka på <strong>Dela ut</strong> i menyn!</p>
+</section>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

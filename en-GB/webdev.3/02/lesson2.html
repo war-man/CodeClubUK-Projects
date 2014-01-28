@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Building simple webpages — </title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<header>
+<div class="level">Lesson 2</div>
+<div class="title">Building simple webpages</div>
+<div class="logo"><img src="/img/ccuk_logo.svg"/></div>
+</header>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<section id="introduction" class="level2 intro">
+<h2>Introduction</h2>
+<p>You know a few <strong>HTML</strong> tags, so it's time to make your first page! Let's get started right away.</p>
+</section>
+<section id="step-1-open-the-starting-document" class="level1 activity">
+<h1>Step 1: Open the starting document</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ol type="1">
+<li>Open a text editor.</li>
+<li>Open the <code>about_me.html</code> file. It contains only a little bit of HTML code to get you started, but you will write the rest yourself.</li>
+</ol>
+</section>
+</section>
+<section id="step-2-make-a-page-about-yourself" class="level1 activity">
+<h1>Step 2: Make a page about yourself</h1>
+<section id="about-mistakes" class="level3">
+<h3>About mistakes</h3>
+<p>Mistakes often happen. It's very easy to make them in HTML because you have to remember to close each tag, and the opening and closing tag are slightly different. Let's try making some mistakes to see how browser tries to make sense of our code even if we haven't written it perfectly.</p>
+</section>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Let's pick the list of things we like as an example. One of the mistakes that happen often is forgetting the <strong>closing tag</strong>, so let's remove the <code>&lt;/ul&gt;</code> to see how it affects the page. Save the file and refresh it in the browser.</li>
+</ul>
+<p>What happened? Some things below the list moved a little bit to the right. If you inspect the page with X-Ray Goggles you can see that things which followed the list now nest inside it, which is why they have moved to the right. After we removed the closing tag the browser simply doesn't know the list of items has ended.</p>
+<p>Add the closing <code>&lt;/ul&gt;</code> tag back in and save it. Now when you refresh the page the rest of tags aren't inside <code>&lt;ul&gt;</code> anymore.</p>
+<ul>
+<li>Tags need to be spelt correctly for browser to understand them. What would happen if we misspelt something?</li>
+</ul>
+<p>Find the <code>&lt;h1&gt;</code> tag. Let's change it to <code>&lt;d1&gt;</code>. Save the document and refresh it in the browser.</p>
+<p>What happened? Since the browser doesn't know what you mean by this tag it can no longer tell that it's a heading and so it doesn't use a larger text to show how important this piece of text is.</p>
+<p>Change <code>&lt;d1&gt;</code> back to <code>&lt;h1&gt;</code> and save again.</p>
+<ul>
+<li>Find one of the <code>&lt;img&gt;</code> tags. We've just tried misspelling the tag name and the browser wasn't sure what to do with it. But what if we misspell the attribute?</li>
+</ul>
+<p>Inside <code>&lt;img&gt;</code> tag we have the <code>href</code> and <code>alt</code> attributes:</p>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> href=</span><span class="st">&quot;kitten.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;This is a kitten.&quot;</span> <span class="kw">/&gt;</span></code></pre>
+<p>Try changing <code>href</code> to something else. Save the document and refresh in the browser.</p>
+<p>Oh no! The kitten is gone!</p>
+<p>Suddenly, the browser no longer knows where to look for the picture to display - it is looking for the file name inside the <code>href</code> attribute, which is no longer there.</p>
+<p>Change it back to <code>href</code> so we can keep looking at the kitten.</p>
+<ul>
+<li>Now remove the second quote (<code>&quot;</code>) from <code>alt</code> attribute of this image: the one after the text, so you end up with this:</li>
+</ul>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> href=</span><span class="st">&quot;kitten.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;This is a kitten. /&gt;</span></code></pre>
+<p>Save it and refresh in the browser.</p>
+<p>The next tag disappeared. Why? The browser will think that everything after <code>alt=&quot;</code> and before the next quote (<code>&quot;</code>) is the additional text for this image, including the end of the image tag and the next opening tag.</p>
+<p>Fix it again by adding a quote after the <code>alt</code> text.</p>
+<p>We've made some common mistakes together, and sometimes a simple error might make the browser struggle to understand what we mean. But most of the time it will try to show us something anyway, so when we've changed the header tag to something else it didn't understand this piece of text was a heading, but it still showed us the text. So it's a little bit understanding, but some mistakes can make it very confused.</p>
+</section>
+</section>
+<section id="step-3-create-another-page-and-link-to-it" class="level1 activity">
+<h1>Step 3: Create another page and link to it</h1>
+<p>Let's create another page. Open <code>about_me_page_2.html</code>. It has a little bit less code than the last page you were working with, but I'm sure you can figure out how to add new tags by now.</p>
+<p><strong>Some hints and ideas:</strong></p>
+<ul>
+<li>Add a heading that will serve as the title of this page.</li>
+<li>You could make this page about your pet, your favourite hobby or your friends and their hobbies.</li>
+<li>Add a list of things your pet likes, if your page is about the pet.</li>
+</ul>
+<p><strong>Are you done? Great! Let's now link the two pages you have created together.</strong></p>
+<p>When we've been linking to parts of the same page, we could just point links to a specific id within a page, like this:</p>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#kitten&quot;</span><span class="kw">&gt;</span>Click to see a kitten<span class="kw">&lt;/a&gt;</span></code></pre>
+<p>Which then took you to something like this:</p>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;kitten&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;kitten.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;This is a kitten.&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+<p>To link to another page, we don't need to include the hash symbol (<code>#</code>), but instead we need to say which file we would like the link to take us to.</p>
+<p>So to link from <code>about_me_page_2.html</code> to <code>about_me.html</code> write it like this:</p>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about_me.html&quot;</span><span class="kw">&gt;</span>Go to About Me page<span class="kw">&lt;/a&gt;</span></code></pre>
+<p>You can change the link text to something else, like the page title if you have changed it.</p>
+<p>To link back from <code>about_me.html</code> to <code>about_me_page_2.html</code> you would have to write it like so:</p>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;about_me_page_2.html&quot;</span><span class="kw">&gt;</span>Go to my second page<span class="kw">&lt;/a&gt;</span></code></pre>
+<p>Congratulations! You have made your own website.</p>
+</section>
+<section id="putting-your-website-on-the-web-extra-activity" class="level1 activity">
+<h1>Putting your website on the web (extra activity)</h1>
+<p>Now you have made your own site, you want to show it off, am I right?</p>
+<p>If you simply copied the address of the web page from your browser and then sent it to someone, they wouldn't see it. That's because this address describes a place on your computer, and your friends don't have access to it. Even of they did, what if they wanted to look at it when your computer wasn't turned on?</p>
+<p>Remember servers from the first session? Servers are computers that are always on and connected to the internet, and they are set up so people can visit websites that live on those computers.</p>
+<p>To do that we will use <strong>Cyberduck</strong> - it's a program for moving files from your computer to a server.</p>
+<ol type="1">
+<li>Click <code>Open Connection</code>.</li>
+<li>Add the server name, user name and password as instructed by the CodeClub volunteer.</li>
+<li>Click <code>Connect</code>. You will then see all the folders and files on the server - most likely the server will be empty, as you haven't added your files yet.</li>
+<li>Drag your website files from your computer into your server window. The uploading will begin.</li>
+<li>Once uploaded, you can visit your website at the address given to you by the CodeClub volunteer.</li>
+</ol>
+<section id="things-to-try" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li>How could you link to another page on the web? (Hint: try adding <code>http://</code> and then the address of the site you want to link to)</li>
+<li>Similar to suggestion above, how would you add a picture from somewhere on the web instead of from your computer? (Hint: again, try adding <code>http://</code> and the address of the picture)</li>
+</ul>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>

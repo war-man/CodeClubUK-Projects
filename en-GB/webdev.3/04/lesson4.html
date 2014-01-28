@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Styling web pages — </title>
+
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/lesson.css">
+  
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<header>
+<div class="level">Lesson 4</div>
+<div class="title">Styling web pages</div>
+<div class="logo"><img src="/img/ccuk_logo.svg"/></div>
+</header>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+<section id="introduction" class="level2 intro">
+<h2>Introduction</h2>
+<p>Let’s make our website better with some styles. In this lesson and the next we are going to learn how to change colour, text, sizes and more!</p>
+<p>We style HTML pages using a language called <strong>CSS</strong> (which stands for <strong>Cascading Style Sheets</strong>). It is a very simple language to learn. Let’s get started.</p>
+</section>
+<section id="step-1-setting-up-to-write-some-style" class="level1 activity">
+<h1>Step 1: Setting up to write some style</h1>
+<p>There are many ways to put styles on: inline, in the head, or as a separate .css document that we link to from the head. But today, we’ll be using styles in the <code>head</code> element of our html page so we don’t have to worry about handling multiple files.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity checklist</h2>
+<ul>
+<li><p>Open the index.html from the Felix folder we did last session.</p></li>
+<li><p>In the head section, we need a <strong>style tag</strong>.</p>
+<pre class="sourceCode css"><code class="sourceCode css"> &lt;style&gt;
+ &lt;/style&gt;</code></pre>
+<p>All our styles will go between these two elements. Simplez. In general, css code looks like this:</p></li>
+</ul>
+<pre class="sourceCode css"><code class="sourceCode css">selector <span class="kw">{</span>
+    <span class="kw">property:</span> value<span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<ul>
+<li>Can you find the ‘{‘ and ‘}’ keys on your keyboard? What about ‘:’ and ‘;’ ? Selectors can be html elements like <code>h1</code>, <code>p</code>, <code>img</code>, <code>a</code>. But they can also be other things which we will learn later.</li>
+</ul>
+</section>
+</section>
+<section id="step-2-adding-colours" class="level1 activity">
+<h1>Step 2: Adding Colours</h1>
+<p>Let’s add some colour with the color property! It’s color without the u. Yes we think it’s confusing too. It’s because it is using the American spelling of the word. That is despite the fact that CSS was invented by a Norwegian dude. Lucky for us it is at least in (American) English and not Norwegian, eh?</p>
+<p>Let’s change the <code>h1</code> to be red instead of black.</p>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;style&gt;</span>
+    h1 <span class="kw">{</span>
+        <span class="kw">color:</span><span class="dt">red</span><span class="kw">;</span> 
+    <span class="kw">}</span>
+<span class="kw">&lt;/style&gt;</span></code></pre>
+<section id="save-your-file-and-view-it-in-your-browser" class="level2 save">
+<h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
+<p>The text is now red, w00t! There are different ways of saying the values for the color. There are 16 basic color names, they are aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow.</p>
+<ul>
+<li><p>Try changing the color to something else! Most browsers support an additional 130 color names, a full alphabetical list is found at <a href="http://www.w3.org/TR/css3-color/#svg-color">http://www.w3.org/TR/css3-color/#svg-color</a> Is your favourite colour in the list?</p></li>
+<li><p>But we can use even more colors by using <strong>hexcode</strong> instead of color name. A hexcode is a # followed by 6 digits, the digits can be 0-9 or the letters A, B, C, D, E, F. Using hexcode we can use more than 16 million colours!</p></li>
+<li><p>At Code Club, our favourite colour is <code>#58AB57</code>. Can you guess what colour it is? Why don’t you try changing some text to that colour and view it in a browser to see.</p></li>
+</ul>
+</section>
+<section id="save-your-file-and-view-it-in-your-browser-1" class="level2 save">
+<h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
+</section>
+</section>
+<section id="step-3-colouring-specific-elements" class="level1 activity">
+<h1>Step 3: Colouring specific elements</h1>
+<p>What if we wanted to make the word ‘orange’ in ‘his fur is orange’ orange? Not the whole paragraph, just that word.</p>
+<p>One way of doing that is putting <code>&lt;span&gt;</code> tags around the word, like so:</p>
+<p><code>&lt;span&gt;orange&lt;/span&gt;</code></p>
+<p>Then in the head, we can style the span.</p>
+<pre class="sourceCode css"><code class="sourceCode css">span <span class="kw">{</span>
+    <span class="kw">color:</span>orange<span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<section id="save-your-file-and-view-it-in-your-browser-2" class="level2 save">
+<h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
+</section>
+</section>
+<section id="step-4-background" class="level1 activity">
+<h1>Step 4: Background</h1>
+<p>We can add colours to the background too, not just text. For instance:</p>
+<pre class="sourceCode css"><code class="sourceCode css">body <span class="kw">{</span>
+    <span class="kw">background-color:</span><span class="dt">#D2FAFC</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+<p>This will make the entire background light blue. You can choose any colour you like from a list at <a href="http://www.colourpicker.com">www.colourpicker.com</a> which generates the number you need which you can copy and paste into your code.</p>
+<p>Now try:</p>
+<pre class="sourceCode css"><code class="sourceCode css">h1 <span class="kw">{</span>
+    <span class="kw">background-color:</span><span class="dt">black</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<p>Since we already had a <code>h1</code> declaration in there, we could just put in the background-color with the color, no need to write it all out again.</p>
+<pre class="sourceCode css"><code class="sourceCode css">h1 <span class="kw">{</span>
+    <span class="kw">color:</span><span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<section id="now-save-your-file-and-see-what-it-looks-like." class="level2 save">
+<h2>Now <strong>SAVE</strong> your file and see what it looks like.</h2>
+</section>
+<section id="fun-with-text" class="level2">
+<h2>Fun with text</h2>
+<p>Maybe the ‘Missing’ header should be <strong>bigger</strong> and also all capital letters. We can specify the size of the text using <code>font-size</code>. The values can be many things, but the most common are 12, 14, 16, 32, 48 and 72 pixels. For now lets try 72px. (px means pixel).</p>
+<pre class="sourceCode css"><code class="sourceCode css">h1 <span class="kw">{</span>
+    <span class="kw">color:</span><span class="dt">red</span><span class="kw">;</span>
+    <span class="kw">background-color:</span><span class="dt">black</span><span class="kw">;</span>
+    <span class="kw">font-size:</span><span class="dt">72px</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<p>Now try making the heading capital letters only by using <code>text-transform:uppercase;</code> We can also make it underlined by using <code>text-decoration:underline;</code></p>
+</section>
+<section id="now-save-your-file-and-see-what-it-looks-like.-1" class="level2 save">
+<h2>Now <strong>SAVE</strong> your file and see what it looks like.</h2>
+<p>It’s much more noticeable now right?</p>
+<section id="if-you-have-firefox-or-chrome-web-browser-only." class="level3">
+<h3>If you have Firefox or Chrome web-browser only.</h3>
+<p>Actually, there is another value for text-decoration called blink. I’m not going to tell you what it does. You have to try it. <code>text-decoration:blink;</code> (it get’s a bit annoying after a while, you can go back to underline if you prefer).</p>
+</section>
+</section>
+</section>
+<section id="step-6.-centering-text-and-images-horizontally" class="level1 activity">
+<h1>Step 6. Centering text (and images) horizontally</h1>
+<p>All our text is all the way over on the left. We can change that using <code>text-align:center</code> (it also takes ‘right’, ‘left’ is the default). 1. We want all our text to be centered for this particular webpage, so we can write: Note the American spelling of the word centre is center.</p>
+<pre class="sourceCode css"><code class="sourceCode css">body <span class="kw">{</span>
+    <span class="kw">background-color:</span> <span class="dt">#F8FAF4</span><span class="kw">;</span>
+    <span class="kw">text-align:</span> <span class="dt">center</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<p>Did you notice that everything in the page went to the centre when we put ‘text-align:center’ in the body section? That’s because everything inside the body element inherits the style. This happens whenever one element is inside another, like here:</p>
+<pre class="sourceCode HTML"><code class="sourceCode html"><span class="kw">&lt;p&gt;</span>Have you seen Felix? <span class="kw">&lt;em&gt;</span>Please<span class="kw">&lt;/em&gt;</span> contact his owner<span class="kw">&lt;/p&gt;</span></code></pre>
+<p>The ‘Please’ will have the style of the <code>&lt;p&gt;</code> element with the style of the <code>&lt;em&gt;</code> element added on. This is why the stylesheets are called <strong>cascading</strong> - the styles cascade from elements into all the ones inside them. Be careful, though, because some styles are not <em>inherited</em>. We will find out about these later.</p>
+<section id="now-save-your-file-and-view-it-in-a-browser" class="level2 save">
+<h2>Now <strong>SAVE</strong> your file and view it in a browser</h2>
+</section>
+<section id="further-study" class="level2 try">
+<h2>Further study</h2>
+<ul>
+<li>How would you change the page to make it look better? Why not try using all your favourite colours? Do they have colour names or do you need to use hexcode?</li>
+<li>If you finish early you can go back and add styles to the html we made in previous lessons.</li>
+</ul>
+</section>
+</section>
+<section class="legal">
+<div>
+These projects are for use inside the UK only. All Code Clubs must be registered. You can check registered clubs at <A href="http://www.codeclub.org.uk/registered-clubs">www.codeclub.org.uk/registered-clubs</a>. This coursework is developed in the open on GitHub, <a href="https://github.com/CodeClub/">https://github.com/CodeClub/</a> come and join us!
+</div>
+</section>
+</body>
+</div>
+</html>
